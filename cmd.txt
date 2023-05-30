@@ -1,0 +1,2915 @@
+["'VERSION'"]
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+
+Installez la derniŠre version de PowerShell pour de nouvelles fonctionnalit‚s et am‚liorationsÿ! https://aka.ms/PSWindows
+
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it 0174a275b3cf0cab858f18096dca86da899bea8b89d73ea008cb264f46425efc trino
+trino> show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ system
+(3 rows)
+
+Query 20230522_072127_00000_ihknb, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+1.13 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino>
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it 0174a275b3cf0cab858f18096dca86da899bea8b89d73ea008cb264f46425efc bash
+root@trino-coordinator:/# ^C
+root@trino-coordinator:/#
+exit
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it 0174a275b3cf0cab858f18096dca86da899bea8b89d73ea008cb264f46425efc trino
+trino> show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ minio
+ system
+(4 rows)
+
+Query 20230522_073254_00000_gstxs, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.73 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino> use minio.iris;
+Query 20230522_073629_00001_gstxs failed: Failed connecting to Hive metastore: [host.docker.internal:9083]
+
+trino>
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it 0174a275b3cf0cab858f18096dca86da899bea8b89d73ea008cb264f46425efc trino
+trino> use minio.iris;
+Query 20230522_084401_00000_gwfnq failed: host.docker.internal:9083: Socket is closed by peer.
+
+trino> show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ minio
+ system
+(4 rows)
+
+Query 20230522_084502_00001_gwfnq, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.91 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino> show mino;
+Query 20230522_084511_00002_gwfnq failed: line 1:6: mismatched input 'mino'. Expecting: 'CATALOGS', 'COLUMNS', 'CREATE', 'CURRENT', 'FUNCTIONS', 'GRANTS', 'ROLE', 'ROLES', 'SCHEMAS', 'SESSION', 'STATS', 'TABLES'
+show mino
+
+trino> show minio;
+Query 20230522_084513_00003_gwfnq failed: line 1:6: mismatched input 'minio'. Expecting: 'CATALOGS', 'COLUMNS', 'CREATE', 'CURRENT', 'FUNCTIONS', 'GRANTS', 'ROLE', 'ROLES', 'SCHEMAS', 'SESSION', 'STATS', 'TABLES'
+show minio
+
+trino> describe minio;
+Query 20230522_084518_00004_gwfnq failed: line 1:1: Schema must be specified when session schema is not set
+describe minio
+
+trino> show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ minio
+ system
+(4 rows)
+
+Query 20230522_084920_00005_gwfnq, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.17 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino> show schema minio;
+Query 20230522_084934_00006_gwfnq failed: line 1:6: mismatched input 'schema'. Expecting: 'CATALOGS', 'COLUMNS', 'CREATE', 'CURRENT', 'FUNCTIONS', 'GRANTS', 'ROLE', 'ROLES', 'SCHEMAS', 'SESSION', 'STATS', 'TABLES'
+show schema minio
+
+trino> use minio
+    -> ;
+Query 20230522_084939_00007_gwfnq failed: line 1:1: Catalog must be specified when session catalog is not set
+use minio
+
+trino> show schemas from minio;
+
+Query 20230522_085221_00008_gwfnq, FAILED, 1 node
+Splits: 11 total, 10 done (90.91%)
+9.74 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_085221_00008_gwfnq failed: Error listing schemas for catalog minio: Failed connecting to Hive metastore: [host.docker.internal:9083]
+
+trino> show catalogs;
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it 0174a275b3cf0cab858f18096dca86da899bea8b89d73ea008cb264f46425efc trino
+Error: No such container: 0174a275b3cf0cab858f18096dca86da899bea8b89d73ea008cb264f46425efc
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it 0d3fad1a5c9e99ed81660dc6c5879a0922faa0eb24c62b90edacae4fcbd1fdbc trino
+trino> show catalogs
+    -> ;
+ Catalog
+---------
+ iceberg
+ system
+(2 rows)
+
+Query 20230522_092049_00000_9sseb, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.86 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino> USE iceberg;
+Query 20230522_092102_00001_9sseb failed: line 1:1: Catalog must be specified when session catalog is not set
+USE iceberg
+
+trino> ./trino --server http://localhost:8080
+    -> ;
+Query 20230522_092255_00002_9sseb failed: line 1:1: mismatched input '.'. Expecting: 'ALTER', 'ANALYZE', 'CALL', 'COMMENT', 'COMMIT', 'CREATE', 'DEALLOCATE', 'DELETE', 'DENY', 'DESC', 'DESCRIBE', 'DROP', 'EXECUTE', 'EXPLAIN', 'GRANT', 'INSERT', 'MERGE', 'PREPARE', 'REFRESH', 'RESET', 'REVOKE', 'ROLLBACK', 'SET', 'SHOW', 'START', 'TRUNCATE', 'UPDATE', 'USE', <query>
+./trino --server http://localhost:8080
+
+trino>
+trino>
+
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it 0d3fad1a5c9e99ed81660dc6c5879a0922faa0eb24c62b90edacae4fcbd1fdbc /trino --server http://localhost:8080
+OCI runtime exec failed: exec failed: unable to start container process: exec: "/trino": stat /trino: no such file or directory: unknown
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it 0d3fad1a5c9e99ed81660dc6c5879a0922faa0eb24c62b90edacae4fcbd1fdbc trino --server http://localhost:8080
+trino> CREATE SCHEMA IF NOT EXISTS iceberg.iris
+    ->     WITH (location = 's3a://iris/');
+Query 20230522_092433_00003_9sseb failed: Failed connecting to Hive metastore: [hive-metastore:9083]
+
+trino>
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg>
+
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg>
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg>
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it b1d0388f9f5fe248603d9247cba36c8dcb9221ca7ed53157db80eac4ac0704cb trino
+trino> show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ system
+ tpcds
+ tpch
+(5 rows)
+
+Query 20230522_093627_00000_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+1.01 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino> show schemas from iceberg;
+       Schema
+--------------------
+ default
+ information_schema
+(2 rows)
+
+Query 20230522_093647_00001_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.41 [2 rows, 35B] [4 rows/s, 85B/s]
+
+trino> use iceberg.default;
+USE
+trino:default> create table iris ;
+Query 20230522_093840_00005_fai7f failed: line 1:18: mismatched input '<EOF>'. Expecting: '(', '.', 'AS', 'COMMENT', 'WITH'
+create table iris <EOF>
+
+trino:default> use iceberg;
+Query 20230522_093934_00006_fai7f failed: Schema does not exist: iceberg.iceberg
+
+trino:default> CREATE SCHEMA IF NOT EXISTS iris
+            ->     WITH (location = 's3a://iris/');
+Query 20230522_093959_00007_fai7f failed: Got exception: java.io.FileNotFoundException Bucket iris does not exist
+
+trino:default> CREATE SCHEMA IF NOT EXISTS datalake
+            ->     WITH (location = 's3a://iris/');
+Query 20230522_094059_00008_fai7f failed: Got exception: java.io.FileNotFoundException Bucket iris does not exist
+
+trino:default> CREATE SCHEMA IF NOT EXISTS datalake
+            ->     WITH (location = 's3a://datalake/');
+CREATE SCHEMA
+trino:default> show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ system
+ tpcds
+ tpch
+(5 rows)
+
+Query 20230522_100820_00010_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.40 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino:default> cd ..
+            -> ;
+Query 20230522_100934_00011_fai7f failed: line 1:1: mismatched input 'cd'. Expecting: 'ALTER', 'ANALYZE', 'CALL', 'COMMENT', 'COMMIT', 'CREATE', 'DEALLOCATE', 'DELETE', 'DENY', 'DESC', 'DESCRIBE', 'DROP', 'EXECUTE', 'EXPLAIN', 'GRANT', 'INSERT', 'MERGE', 'PREPARE', 'REFRESH', 'RESET', 'REVOKE', 'ROLLBACK', 'SET', 'SHOW', 'START', 'TRUNCATE', 'UPDATE', 'USE', <query>
+cd ..
+
+trino:default>
+
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it b1d0388f9f5fe248603d9247cba36c8dcb9221ca7ed53157db80eac4ac0704cb trino
+trino> use hive;
+Query 20230522_101644_00012_fai7f failed: line 1:1: Catalog must be specified when session catalog is not set
+use hive
+
+trino> use hive.default;
+USE
+trino:default> show tables;
+ Table
+-------
+(0 rows)
+
+Query 20230522_101723_00016_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.12 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino:default>
+
+PS C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\trino-minio-iceberg> docker exec -u 0 -it b1d0388f9f5fe248603d9247cba36c8dcb9221ca7ed53157db80eac4ac0704cb trino
+trino> use hive;
+Query 20230522_101852_00017_fai7f failed: line 1:1: Catalog must be specified when session catalog is not set
+use hive
+
+trino> CREATE SCHEMA hive.weatheronepoint
+    -> WITH (location = 's3://weatheronepoint/')
+    -> ;
+Query 20230522_102356_00018_fai7f failed: Got exception: org.apache.hadoop.fs.UnsupportedFileSystemException No FileSystem for scheme "s3"
+
+trino> CREATE SCHEMA hive.weatheronepoint
+    -> WITH (location = 's3a://weatheronepoint/')
+    -> ;
+CREATE SCHEMA
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   coord string,
+    ->   list string
+    -> )
+    -> WITH (
+    ->   format = 'PARQUET',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> )
+    -> ;
+Query 20230522_102937_00020_fai7f failed: line 2:3: Unknown type 'string' for column 'coord'
+CREATE TABLE hive.weatheronepoint.weatheronepoint (
+  coord string,
+  list string
+)
+WITH (
+  format = 'PARQUET',
+  external_location = 's3a://weatheronepoint/weatheronepoint/'
+)
+
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   coord STRING,
+    ->   list STRING
+    -> )
+    -> WITH (
+    ->   format = 'PARQUET',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+Query 20230522_103008_00021_fai7f failed: line 2:3: Unknown type 'STRING' for column 'coord'
+CREATE TABLE hive.weatheronepoint.weatheronepoint (
+  coord STRING,
+  list STRING
+)
+WITH (
+  format = 'PARQUET',
+  external_location = 's3a://weatheronepoint/weatheronepoint/'
+)
+
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   coord varchar,
+    ->   list varchar
+    -> )
+    -> WITH (
+    ->   format = 'PARQUET',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> select * from hive.weatheronepoint.weatheronepoint;
+
+Query 20230522_103059_00023_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.58 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_103059_00023_fai7f failed: Error opening Hive split s3a://weatheronepoint/weatheronepoint/2023_05_22_1684749992079_0.parquet (offset=0, length=13110): class org.apache.parquet.io.GroupColumnIO cannot be cast to class org.apache.parquet.io.PrimitiveColumnIO (org.apache.parquet.io.GroupColumnIO and org.apache.parquet.io.PrimitiveColumnIO are in unnamed module of loader io.trino.server.PluginClassLoader @27afeede)
+
+trino> CREATE or REPLACE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'CSV',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+Query 20230522_115325_00024_fai7f failed: line 1:19: mismatched input 'TABLE'. Expecting: 'MATERIALIZED', 'VIEW'
+CREATE or REPLACE TABLE hive.weatheronepoint.weatheronepoint (
+  _airbyte_ab_id varchar,
+  _airbyte_emitted_at timestamp,
+  _airbyte_data varchar
+)
+WITH (
+  format = 'CSV',
+  external_location = 's3a://weatheronepoint/weatheronepoint/'
+)
+
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'CSV',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+Query 20230522_115349_00025_fai7f failed: line 1:1: Table 'hive.weatheronepoint.weatheronepoint' already exists
+CREATE TABLE hive.weatheronepoint.weatheronepoint (
+  _airbyte_ab_id varchar,
+  _airbyte_emitted_at timestamp,
+  _airbyte_data varchar
+)
+WITH (
+  format = 'CSV',
+  external_location = 's3a://weatheronepoint/weatheronepoint/'
+)
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+DROP TABLE
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'CSV',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+Query 20230522_115419_00027_fai7f failed: Hive CSV storage format only supports VARCHAR (unbounded). Unsupported columns: _airbyte_emitted_at timestamp(3)
+
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at varchar,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'CSV',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> select * from hive.weatheronepoint.weatheronepoint;
+            _airbyte_ab_id            | _airbyte_emitted_at |                                                                       >--------------------------------------+---------------------+-----------------------------------------------------------------------> _airbyte_ab_id                       | _airbyte_emitted_at | _airbyte_data                                                         > e031023a-0c6d-49be-9968-a96c13651d54 | 1684756335000       | {"coord":{"lon":2.2852,"lat":48.8643},"weather":[{"id":801,"main":"Clo>(2 rows)
+...skipping...
+            _airbyte_ab_id            | _airbyte_emitted_at |                                                                       >--------------------------------------+---------------------+-----------------------------------------------------------------------> _airbyte_ab_id                       | _airbyte_emitted_at | _airbyte_data                                                         > e031023a-0c6d-49be-9968-a96c13651d54 | 1684756335000       | {"coord":{"lon":2.2852,"lat":48.8643},"weather":[{"id":801,"main":"Clo>(2 rows)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+Query 20230522_115448_00029_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.38 [2 rows, 669B] [5 rows/s, 1.74KB/s]
+
+trino> select _airbyte_data:coord from hive.weatheronepoint.weatheronepoint;
+Query 20230522_115510_00030_fai7f failed: line 1:21: mismatched input ':'. Expecting: '%', '*', '+', ',', '-', '.', '/', 'AND', 'AS', 'AT', 'EXCEPT', 'FETCH', 'FROM', 'GROUP', 'HAVING', 'INTERSECT', 'LIMIT', 'OFFSET', 'OR', 'ORDER', 'UNION', 'WHERE', 'WINDOW', '[', '||', <EOF>, <identifier>, <predicate>
+select _airbyte_data:coord from hive.weatheronepoint.weatheronepoint
+
+trino> select _airbyte_data.coord from hive.weatheronepoint.weatheronepoint;
+Query 20230522_115519_00031_fai7f failed: line 1:8: Expression _airbyte_data is not of type ROW
+select _airbyte_data.coord from hive.weatheronepoint.weatheronepoint
+
+trino> select * from hive.weatheronepoint.weatheronepoint;
+            _airbyte_ab_id            | _airbyte_emitted_at |                                                                       >--------------------------------------+---------------------+-----------------------------------------------------------------------> _airbyte_ab_id                       | _airbyte_emitted_at | _airbyte_data                                                         > e031023a-0c6d-49be-9968-a96c13651d54 | 1684756335000       | {"coord":{"lon":2.2852,"lat":48.8643},"weather":[{"id":801,"main":"Clo>(2 rows)
+
+Query 20230522_115656_00032_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.14 [2 rows, 669B] [14 rows/s, 4.6KB/s]
+
+trino> SELECT JSONExtractScalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_115935_00033_fai7f failed: line 1:8: Function 'jsonextractscalar' not registered
+SELECT JSONExtractScalar(_airbyte_data, '$.coord.lon') AS coord_lon
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT JSONExtract(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_120000_00034_fai7f failed: line 1:8: Function 'jsonextract' not registered
+SELECT JSONExtract(_airbyte_data, '$.coord.lon') AS coord_lon
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT JSONExtractScalarText(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_120025_00035_fai7f failed: line 1:8: Function 'jsonextractscalartext' not registered
+SELECT JSONExtractScalarText(_airbyte_data, '$.coord.lon') AS coord_lon
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT CAST(JSONExtract(_airbyte_data, '$.coord.lon') AS double) AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_120057_00036_fai7f failed: line 1:13: Function 'jsonextract' not registered
+SELECT CAST(JSONExtract(_airbyte_data, '$.coord.lon') AS double) AS coord_lon
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint;
+ coord_lon
+-----------
+ NULL
+ 2.2852
+(2 rows)
+
+Query 20230522_120240_00037_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.26 [2 rows, 669B] [7 rows/s, 2.55KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+ 2.2852
+(1 row)
+
+Query 20230522_120359_00038_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.28 [2 rows, 669B] [7 rows/s, 2.38KB/s]
+
+trino> SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint;
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------> "_airbyte_data"                                                                                                                    > "{\"coord\":{\"lon\":2.2852,\"lat\":48.8643},\"weather\":[{\"id\":801,\"main\":\"Clouds\",\"description\":\"few clouds\",\"icon\":\>(2 rows)
+
+Query 20230522_121004_00039_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.15 [2 rows, 669B] [13 rows/s, 4.41KB/s]
+
+trino> SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json, _airbyte_data
+    -> FROM hive.weatheronepoint.weatheronepoint;
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------> "_airbyte_data"                                                                                                                    > "{\"coord\":{\"lon\":2.2852,\"lat\":48.8643},\"weather\":[{\"id\":801,\"main\":\"Clouds\",\"description\":\"few clouds\",\"icon\":\>(2 rows)
+ ESCOC
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >:801,\"main\":\"Clouds\",\"description\":\"few clouds\",\"icon\":\"02d\"}],\"base\":\"stations\",\"main\":{\"temp\":294.11,\"feels_l>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >"02d\"}],\"base\":\"stations\",\"main\":{\"temp\":294.11,\"feels_like\":294.01,\"temp_min\":293.26,\"temp_max\":295.83,\"pressure\":>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                         airbyte_data_json                                          >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >ike\":294.01,\"temp_min\":293.26,\"temp_max\":295.83,\"pressure\":1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.6>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+       airbyte_data_json                                                                                                            >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >3,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":2012208,\"country\":\"FR\",\"sunrise\":168472807>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >\"type\":2,\"id\":2012208,\"country\":\"FR\",\"sunrise\":1684728078,\"sunset\":1684784039},\"timezone\":7200,\"id\":6545270,\"name\">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                                                  |                                 >--------------------------------------------------------------------------------------------------+--------------------------------->                                                                                                  | _airbyte_data                   >8,\"sunset\":1684784039},\"timezone\":7200,\"id\":6545270,\"name\":\"Palais-Royal\",\"cod\":200}" | {"coord":{"lon":2.2852,"lat":48.>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                |                                                                                                   >--------------------------------+--------------------------------------------------------------------------------------------------->                                | _airbyte_data                                                                                     >:\"Palais-Royal\",\"cod\":200}" | {"coord":{"lon":2.2852,"lat":48.8643},"weather":[{"id":801,"main":"Clouds","description":"few clou>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >8643},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02d"}],"base":"stations","main":{"temp":294.11,"feels_>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >ds","icon":"02d"}],"base":"stations","main":{"temp":294.11,"feels_like":294.01,"temp_min":293.26,"temp_max":295.83,"pressure":1017,">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                    _airbyte_data                                                   >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >like":294.01,"temp_min":293.26,"temp_max":295.83,"pressure":1017,"humidity":67},"visibility":10000,"wind":{"speed":4.63,"deg":330},">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+  _airbyte_data                                                                                                                     >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >humidity":67},"visibility":10000,"wind":{"speed":4.63,"deg":330},"clouds":{"all":20},"dt":1684756335,"sys":{"type":2,"id":2012208,"c>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >clouds":{"all":20},"dt":1684756335,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1684728078,"sunset":1684784039},"timezone":>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+
+---------------------------------------------------------------------------------------------------------------------
+
+ountry":"FR","sunrise":1684728078,"sunset":1684784039},"timezone":7200,"id":6545270,"name":"Palais-Royal","cod":200}
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >clouds":{"all":20},"dt":1684756335,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1684728078,"sunset":1684784039},"timezone":>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+  _airbyte_data                                                                                                                     >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >humidity":67},"visibility":10000,"wind":{"speed":4.63,"deg":330},"clouds":{"all":20},"dt":1684756335,"sys":{"type":2,"id":2012208,"c>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                                                    _airbyte_data                                                   >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >like":294.01,"temp_min":293.26,"temp_max":295.83,"pressure":1017,"humidity":67},"visibility":10000,"wind":{"speed":4.63,"deg":330},">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >ds","icon":"02d"}],"base":"stations","main":{"temp":294.11,"feels_like":294.01,"temp_min":293.26,"temp_max":295.83,"pressure":1017,">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOC
+                                                                    _airbyte_data                                                   >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >like":294.01,"temp_min":293.26,"temp_max":295.83,"pressure":1017,"humidity":67},"visibility":10000,"wind":{"speed":4.63,"deg":330},">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >ds","icon":"02d"}],"base":"stations","main":{"temp":294.11,"feels_like":294.01,"temp_min":293.26,"temp_max":295.83,"pressure":1017,">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >8643},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02d"}],"base":"stations","main":{"temp":294.11,"feels_>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                |                                                                                                   >--------------------------------+--------------------------------------------------------------------------------------------------->                                | _airbyte_data                                                                                     >:\"Palais-Royal\",\"cod\":200}" | {"coord":{"lon":2.2852,"lat":48.8643},"weather":[{"id":801,"main":"Clouds","description":"few clou>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                                                                                  |                                 >--------------------------------------------------------------------------------------------------+--------------------------------->                                                                                                  | _airbyte_data                   >8,\"sunset\":1684784039},\"timezone\":7200,\"id\":6545270,\"name\":\"Palais-Royal\",\"cod\":200}" | {"coord":{"lon":2.2852,"lat":48.>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >\"type\":2,\"id\":2012208,\"country\":\"FR\",\"sunrise\":1684728078,\"sunset\":1684784039},\"timezone\":7200,\"id\":6545270,\"name\">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >3,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":2012208,\"country\":\"FR\",\"sunrise\":168472807>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+ ESCOD
+       airbyte_data_json                                                                                                            >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+       airbyte_data_json                                                                                                                       >----------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                               >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+       airbyte_data_json                                                                                                                                                 >------------------------------------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                                                         >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":2012208,\"country\">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+       airbyte_data_json                                                                                                                                                                                       >--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                                                                                               >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":2012208,\"country\":\"FR\",\"sunrise\":1684728078,\"sunse>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+       airbyte_data_json                                                                                                                                                                                                                 >----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                                                                                                                         >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":2012208,\"country\":\"FR\",\"sunrise\":1684728078,\"sunset\":1684784039},\"timezone>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+       airbyte_data_json                                                                                                                                                                                                                                                  >-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                                                                                                                                                          >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":2012208,\"country\":\"FR\",\"sunrise\":1684728078,\"sunset\":1684784039},\"timezone\":7200,\"id\":6545270,\"name\":\>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+       airbyte_data_json                                                                                                                                                                                       >--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                                                                                               >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":2012208,\"country\":\"FR\",\"sunrise\":1684728078,\"sunse>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+       airbyte_data_json                                                                                                                                                 >------------------------------------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                                                         >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":2012208,\"country\">
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+       airbyte_data_json                                                                                                                                   >----------------------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                                           >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,\"id\":20122>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+       airbyte_data_json                                                                                                                       >----------------------------------------------------------------------------------------------------------------------------------------------->                                                                                                                                               >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{\"type\":2,>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+       airbyte_data_json                                                                                                            >------------------------------------------------------------------------------------------------------------------------------------>                                                                                                                                    >1017,\"humidity\":67},\"visibility\":10000,\"wind\":{\"speed\":4.63,\"deg\":330},\"clouds\":{\"all\":20},\"dt\":1684756335,\"sys\":{>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+Query 20230522_121130_00040_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.30 [2 rows, 669B] [6 rows/s, 2.16KB/s]
+
+trino> SELECT CAST(_airbyte_data AS JSON).coord AS airbyte_data_json                                                                     -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_121429_00041_fai7f failed: line 1:8: Expression CAST(_airbyte_data AS JSON) is not of type ROW
+SELECT CAST(_airbyte_data AS JSON).coord AS airbyte_data_json
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint;
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------> "_airbyte_data"                                                                                                                    > "{\"coord\":{\"lon\":2.2852,\"lat\":48.8643},\"weather\":[{\"id\":801,\"main\":\"Clouds\",\"description\":\"few clouds\",\"icon\":\>(2 rows)
+...skipping...
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------> "_airbyte_data"                                                                                                                    > "{\"coord\":{\"lon\":2.2852,\"lat\":48.8643},\"weather\":[{\"id\":801,\"main\":\"Clouds\",\"description\":\"few clouds\",\"icon\":\>(2 rows)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+Query 20230522_121437_00042_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.19 [2 rows, 669B] [10 rows/s, 3.49KB/s]
+
+trino> Select airbyte_data_json.coord FROM 5SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_121506_00043_fai7f failed: line 1:37: identifiers must not start with a digit; surround the identifier with double quotes
+Select airbyte_data_json.coord FROM 5SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> Select airbyte_data_json.coord FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint);
+Query 20230522_121514_00044_fai7f failed: line 1:8: Expression airbyte_data_json is not of type ROW
+Select airbyte_data_json.coord FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+FROM hive.weatheronepoint.weatheronepoint)
+
+trino> Select airbyte_data_json FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint);
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------> "_airbyte_data"                                                                                                                    > "{\"coord\":{\"lon\":2.2852,\"lat\":48.8643},\"weather\":[{\"id\":801,\"main\":\"Clouds\",\"description\":\"few clouds\",\"icon\":\>(2 rows)
+...skipping...
+                                                                                                                                    >------------------------------------------------------------------------------------------------------------------------------------> "_airbyte_data"                                                                                                                    > "{\"coord\":{\"lon\":2.2852,\"lat\":48.8643},\"weather\":[{\"id\":801,\"main\":\"Clouds\",\"description\":\"few clouds\",\"icon\":\>(2 rows)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+Query 20230522_121523_00045_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.11 [2 rows, 669B] [19 rows/s, 6.22KB/s]
+
+trino> Select airbyte_data_json:coord FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint);
+Query 20230522_121540_00046_fai7f failed: line 1:25: mismatched input ':'. Expecting: '%', '*', '+', ',', '-', '.', '/', 'AND', 'AS', 'AT', 'EXCEPT', 'FETCH', 'FROM', 'GROUP', 'HAVING', 'INTERSECT', 'LIMIT', 'OFFSET', 'OR', 'ORDER', 'UNION', 'WHERE', 'WINDOW', '[', '||', <EOF>, <identifier>, <predicate>
+Select airbyte_data_json:coord FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+FROM hive.weatheronepoint.weatheronepoint)
+
+trino> Select $airbyte_data_json.coord FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint);
+Query 20230522_121548_00047_fai7f failed: line 1:8: mismatched input '$'. Expecting: '*', 'ALL', 'DISTINCT', <expression>
+Select $airbyte_data_json.coord FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+FROM hive.weatheronepoint.weatheronepoint)
+
+trino> Select $airbyte_data_json."coord" FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint);
+Query 20230522_121553_00048_fai7f failed: line 1:8: mismatched input '$'. Expecting: '*', 'ALL', 'DISTINCT', <expression>
+Select $airbyte_data_json."coord" FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+FROM hive.weatheronepoint.weatheronepoint)
+
+trino> Select airbyte_data_json."coord" FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    -> FROM hive.weatheronepoint.weatheronepoint);
+Query 20230522_121557_00049_fai7f failed: line 1:8: Expression airbyte_data_json is not of type ROW
+Select airbyte_data_json."coord" FROM (SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+FROM hive.weatheronepoint.weatheronepoint)
+
+trino>
+trino> SELECT CAST(_airbyte_data AS JSON)->'coord' AS coord
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_121858_00050_fai7f failed: line 1:35: mismatched input '->'. Expecting: '(', ')', 'ARRAY'
+SELECT CAST(_airbyte_data AS JSON)->'coord' AS coord
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT JSONExtractScalarText(CAST(_airbyte_data AS JSON), '$.coord') AS coord
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_121925_00051_fai7f failed: line 1:8: Function 'jsonextractscalartext' not registered
+SELECT JSONExtractScalarText(CAST(_airbyte_data AS JSON), '$.coord') AS coord
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT JSONExtract(CAST(_airbyte_data AS JSON), '$.coord') AS coord                                                               -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_121953_00052_fai7f failed: line 1:8: Function 'jsonextract' not registered
+SELECT JSONExtract(CAST(_airbyte_data AS JSON), '$.coord') AS coord
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT JSONExtract(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_122016_00053_fai7f failed: line 1:8: Function 'jsonextract' not registered
+SELECT JSONExtract(_airbyte_data, '$.coord.lon') AS coord_lon
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lonÿ
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_122037_00054_fai7f failed: line 1:70: mismatched input 'ÿ'. Expecting: ',', 'EXCEPT', 'FETCH', 'FROM', 'GROUP', 'HAVING', 'INTERSECT', 'LIMIT', 'OFFSET', 'ORDER', 'UNION', 'WHERE', 'WINDOW', <EOF>
+SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lonÿ
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+ 2.2852
+(1 row)
+
+Query 20230522_122111_00055_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.23 [2 rows, 669B] [8 rows/s, 2.82KB/s]
+
+trino> SELECT json_extract_scalar(CAST(_airbyte_data AS JSON), '$.coord') AS coord                                                       -> FROM hive.weatheronepoint.weatheronepoint;
+ coord
+-------
+ NULL
+ NULL
+(2 rows)
+
+Query 20230522_122153_00056_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.12 [2 rows, 669B] [17 rows/s, 5.58KB/s]
+
+trino> SELECT airbyte_data_json -> 'coord'
+    -> FROM (
+    ->   SELECT json_parse(_airbyte_data) AS airbyte_data_json
+    ->   FROM hive.weatheronepoint.weatheronepoint
+    -> );
+Query 20230522_122243_00057_fai7f failed: line 1:8: Lambda expression should always be used inside a function
+SELECT airbyte_data_json -> 'coord'
+FROM (
+  SELECT json_parse(_airbyte_data) AS airbyte_data_json
+  FROM hive.weatheronepoint.weatheronepoint
+)
+
+trino> SELECT json_extract(airbyte_data_json, '$.coord')
+    -> FROM (
+    ->   SELECT json_parse(_airbyte_data) AS airbyte_data_json
+    ->   FROM hive.weatheronepoint.weatheronepoint
+    -> );
+
+Query 20230522_122528_00058_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.11 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_122528_00058_fai7f failed: Cannot convert value to JSON: '_airbyte_data'
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+ 2.2852
+(1 row)
+
+Query 20230522_122634_00059_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.13 [2 rows, 669B] [15 rows/s, 4.91KB/s]
+
+trino> SELECT json_extract_scalar(airbyte_data_json, '$.coord')                                                                          -> FROM (
+    ->   SELECT json_parse(_airbyte_data) AS airbyte_data_json
+    ->   FROM hive.weatheronepoint.weatheronepoint
+    -> );
+
+Query 20230522_130418_00060_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.29 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_130418_00060_fai7f failed: Cannot convert value to JSON: '_airbyte_data'
+
+trino> SELECT
+    ->     json_extract(json_parse(_airbyte_data), '$.coord') AS coord
+    -> FROM
+    ->     hive.weatheronepoint.weatheronepoint;
+
+Query 20230522_131210_00061_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.14 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_131210_00061_fai7f failed: Cannot convert value to JSON: '_airbyte_data'
+
+trino> SELECT json_parse(_airbyte_data) -> 'coord'
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_131241_00062_fai7f failed: line 1:34: mismatched input '->'. Expecting: '%', '*', '+', ',', '-', '.', '/', 'AND', 'AS', 'AT', 'EXCEPT', 'FETCH', 'FILTER', 'FROM', 'GROUP', 'HAVING', 'IGNORE', 'INTERSECT', 'LIMIT', 'OFFSET', 'OR', 'ORDER', 'OVER', 'RESPECT', 'UNION', 'WHERE', 'WINDOW', '[', '||', <EOF>, <identifier>, <predicate>
+SELECT json_parse(_airbyte_data) -> 'coord'
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT airbyte_data_json -> 'coord'
+    -> FROM (
+    ->   SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+    ->   FROM hive.weatheronepoint.weatheronepoint
+    -> );
+Query 20230522_131252_00063_fai7f failed: line 1:8: Lambda expression should always be used inside a function
+SELECT airbyte_data_json -> 'coord'
+FROM (
+  SELECT CAST(_airbyte_data AS JSON) AS airbyte_data_json
+  FROM hive.weatheronepoint.weatheronepoint
+)
+
+trino> SELECT json_parse(_airbyte_data) -> 'coord'
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_131321_00064_fai7f failed: line 1:34: mismatched input '->'. Expecting: '%', '*', '+', ',', '-', '.', '/', 'AND', 'AS', 'AT', 'EXCEPT', 'FETCH', 'FILTER', 'FROM', 'GROUP', 'HAVING', 'IGNORE', 'INTERSECT', 'LIMIT', 'OFFSET', 'OR', 'ORDER', 'OVER', 'RESPECT', 'UNION', 'WHERE', 'WINDOW', '[', '||', <EOF>, <identifier>, <predicate>
+SELECT json_parse(_airbyte_data) -> 'coord'
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+
+Query 20230522_131548_00065_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.13 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_131548_00065_fai7f failed: Cannot convert value to JSON: '_airbyte_data'
+
+trino> SELECT json_extract(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+ 2.2852
+(1 row)
+
+Query 20230522_132422_00066_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.31 [2 rows, 669B] [6 rows/s, 2.13KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+ 2.2852
+(1 row)
+
+Query 20230522_132439_00067_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.20 [2 rows, 669B] [9 rows/s, 3.2KB/s]
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+DROP TABLE
+trino> CREATE SCHEMA hive.weatheronepoint
+    -> WITH (location = 's3a://weatheronepoint/')
+    ->
+    -> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'JSON',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+Query 20230522_134617_00069_fai7f failed: line 4:1: mismatched input 'CREATE'. Expecting: '%', ')', '*', '+', ',', '-', '.', '/', 'AND', 'AT', 'OR', '[', '||', <predicate>
+CREATE SCHEMA hive.weatheronepoint
+WITH (location = 's3a://weatheronepoint/')
+
+CREATE TABLE hive.weatheronepoint.weatheronepoint (
+  _airbyte_ab_id varchar,
+  _airbyte_emitted_at timestamp,
+  _airbyte_data varchar
+)
+WITH (
+  format = 'JSON',
+  external_location = 's3a://weatheronepoint/weatheronepoint/'
+)
+
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'JSON',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+
+Query 20230522_134714_00071_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.56 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_134714_00071_fai7f failed: Failed to read file at s3a://weatheronepoint/weatheronepoint/2023_05_22_1684763070898_0.jsonl
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+
+Query 20230522_134741_00072_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.19 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_134741_00072_fai7f failed: Failed to read file at s3a://weatheronepoint/weatheronepoint/2023_05_22_1684763070898_0.jsonl
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+DROP TABLE
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'JSONL',                                                                                                               ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+Query 20230522_135238_00074_fai7f failed: Unable to set catalog 'hive' table property 'format' to ['JSONL']: Invalid value [JSONL]. Valid values: [ORC, PARQUET, AVRO, RCBINARY, RCTEXT, SEQUENCEFILE, JSON, OPENX_JSON, TEXTFILE, CSV, REGEX]
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+Query 20230522_135454_00075_fai7f failed: line 1:1: Table 'hive.weatheronepoint.weatheronepoint' does not exist
+drop table hive.weatheronepoint.weatheronepoint
+
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'JSON',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+
+Query 20230522_135522_00077_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.11 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_135522_00077_fai7f failed: Failed to read file at s3a://weatheronepoint/weatheronepoint/2023_05_22_1684763070898_0.jsonl
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+DROP TABLE
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'TEXTFILE',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_135814_00080_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.13 [1 rows, 592B] [7 rows/s, 4.52KB/s]
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+DROP TABLE
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data json
+    -> )
+    -> WITH (
+    ->   format = 'TEXTFILE',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+Query 20230522_140029_00082_fai7f failed: Unsupported Hive type: json
+
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'TEXTFILE',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_140137_00084_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.10 [1 rows, 592B] [10 rows/s, 6.09KB/s]
+
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint;
+ coord_lon
+-----------
+ NULL
+(1 row)
+
+Query 20230522_140452_00085_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.10 [1 rows, 592B] [10 rows/s, 5.84KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_140810_00086_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.13 [1 rows, 592B] [7 rows/s, 4.59KB/s]
+
+trino> SELECT _airbyte_data FROM hive.weatheronepoint.weatheronepoint;
+ _airbyte_data
+---------------
+ NULL
+(1 row)
+
+Query 20230522_140846_00087_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.18 [1 rows, 592B] [5 rows/s, 3.19KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_141105_00088_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.11 [1 rows, 592B] [9 rows/s, 5.51KB/s]
+
+trino> SELECT json_extract(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_141125_00089_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.09 [1 rows, 592B] [11 rows/s, 6.72KB/s]
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+DROP TABLE
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'AVRO',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> SELECT json_extract(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_145132_00092_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+1.12 [1 rows, 3.33KB] [0 rows/s, 2.97KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;                                                           coord_lon
+-----------
+(0 rows)
+
+Query 20230522_145201_00093_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.26 [1 rows, 3.33KB] [3 rows/s, 13KB/s]
+
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint;
+ coord_lon
+-----------
+ NULL
+(1 row)
+
+Query 20230522_145217_00094_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.22 [1 rows, 3.33KB] [4 rows/s, 15KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_145245_00095_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.12 [1 rows, 3.33KB] [8 rows/s, 27.1KB/s]
+
+trino> SELECT json_extract(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint;
+ coord_lon
+-----------
+ NULL
+(1 row)
+
+Query 20230522_145307_00096_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.20 [1 rows, 3.33KB] [5 rows/s, 16.9KB/s]
+
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint;
+ coord_lon
+-----------
+ NULL
+(1 row)
+
+Query 20230522_145313_00097_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.15 [1 rows, 3.33KB] [6 rows/s, 21.8KB/s]
+
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_145326_00098_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.12 [1 rows, 3.33KB] [8 rows/s, 29KB/s]
+
+trino> SELECT json_extract(airbyte_data_json, '$.coord')
+    -> FROM (
+    ->   SELECT json_parse(_airbyte_data) AS airbyte_data_json
+    ->   FROM hive.weatheronepoint.weatheronepoint
+    -> );
+ _col0
+-------
+ NULL
+(1 row)
+
+Query 20230522_145341_00099_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.21 [1 rows, 3.33KB] [4 rows/s, 15.6KB/s]
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+DROP TABLE
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'PARQUET',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_145542_00102_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.14 [1 rows, 12.1KB] [6 rows/s, 83.9KB/s]
+
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_145549_00103_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.13 [1 rows, 12.1KB] [7 rows/s, 95.9KB/s]
+
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint;
+ coord_lon
+-----------
+ NULL
+(1 row)
+
+Query 20230522_145554_00104_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.12 [1 rows, 12.1KB] [8 rows/s, 98.2KB/s]
+
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+(0 rows)
+
+Query 20230522_145602_00105_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.10 [1 rows, 12.1KB] [10 rows/s, 127KB/s]
+
+trino> drop table hive.weatheronepoint.weatheronepoint;
+DROP TABLE
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at timestamp,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'CSV',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+    ->
+Query 20230522_145709_00107_fai7f failed: Hive CSV storage format only supports VARCHAR (unbounded). Unsupported columns: _airbyte_emitted_at timestamp(3)
+
+trino> CREATE TABLE hive.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id varchar,
+    ->   _airbyte_emitted_at varchar,
+    ->   _airbyte_data varchar
+    -> )
+    -> WITH (
+    ->   format = 'CSV',
+    ->   external_location = 's3a://weatheronepoint/weatheronepoint/'
+    -> );
+CREATE TABLE
+trino> SELECT
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') AS coord_lon
+    -> FROM
+    ->   hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(json_parse(_airbyte_data), '$.coord.lon') IS NOT NULL;
+
+Query 20230522_145749_00109_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.10 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_145749_00109_fai7f failed: Cannot convert value to JSON: '_airbyte_data'
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL;
+ coord_lon
+-----------
+ 2.2852
+(1 row)
+
+Query 20230522_145814_00110_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.18 [2 rows, 672B] [11 rows/s, 3.67KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon                                                             -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL;
+ coord_lon
+-----------
+ 48.8643
+(1 row)
+
+Query 20230522_145905_00111_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.11 [2 rows, 672B] [19 rows/s, 6.25KB/s]
+
+trino> show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ system
+ tpcds
+ tpch
+(5 rows)
+
+Query 20230522_152042_00112_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.21 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino> show * from iceberg;
+Query 20230522_152114_00113_fai7f failed: line 1:6: mismatched input '*'. Expecting: 'CATALOGS', 'COLUMNS', 'CREATE', 'CURRENT', 'FUNCTIONS', 'GRANTS', 'ROLE', 'ROLES', 'SCHEMAS', 'SESSION', 'STATS', 'TABLES'
+show * from iceberg
+
+trino> show schemas from iceberg;
+       Schema
+--------------------
+ datalake
+ default
+ information_schema
+ weatheronepoint
+(4 rows)
+
+Query 20230522_152208_00114_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.13 [4 rows, 68B] [31 rows/s, 535B/s]
+
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at TIMESTAMP,
+    ->   _airbyte_data STRUCT<
+    ->     coord: STRUCT<lon: DOUBLE, lat: DOUBLE>,
+    ->     weather: ARRAY<STRUCT<id: INT, main: VARCHAR, description: VARCHAR, icon: VARCHAR>>,
+    ->     base: VARCHAR,
+    ->     main: STRUCT<temp: DOUBLE, feels_like: DOUBLE, temp_min: DOUBLE, temp_max: DOUBLE, pressure: INT, humidity: INT>,
+    ->     visibility: INT,
+    ->     wind: STRUCT<speed: DOUBLE, deg: INT>,
+    ->     clouds: STRUCT<all: INT>,
+    ->     dt: INT,
+    ->     sys: STRUCT<type: INT, id: INT, country: VARCHAR, sunrise: INT, sunset: INT>,
+    ->     timezone: INT,
+    ->     id: INT,
+    ->     name: VARCHAR,
+    ->     cod: INT
+    ->   >
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+Query 20230522_152534_00115_fai7f failed: line 4:23: mismatched input '<'. Expecting: ')', ','
+CREATE TABLE iceberg.weatheronepoint.weatheronepoint (
+  _airbyte_ab_id VARCHAR,
+  _airbyte_emitted_at TIMESTAMP,
+  _airbyte_data STRUCT<
+    coord: STRUCT<lon: DOUBLE, lat: DOUBLE>,
+    weather: ARRAY<STRUCT<id: INT, main: VARCHAR, description: VARCHAR, icon: VARCHAR>>,
+    base: VARCHAR,
+    main: STRUCT<temp: DOUBLE, feels_like: DOUBLE, temp_min: DOUBLE, temp_max: DOUBLE, pressure: INT, humidity: INT>,
+    visibility: INT,
+    wind: STRUCT<speed: DOUBLE, deg: INT>,
+    clouds: STRUCT<all: INT>,
+    dt: INT,
+    sys: STRUCT<type: INT, id: INT, country: VARCHAR, sunrise: INT, sunset: INT>,
+    timezone: INT,
+    id: INT,
+    name: VARCHAR,
+    cod: INT
+  >
+) WITH (
+  format = 'ORC'
+)
+
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at TIMESTAMP,
+    ->   _airbyte_data ROW(
+    ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     base VARCHAR,
+    ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     visibility INT,
+    ->     wind ROW(speed DOUBLE, deg INT),
+    ->     clouds ROW(all INT),
+    ->     dt INT,
+    ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     timezone INT,
+    ->     id INT,
+    ->     name VARCHAR,
+    ->     cod INT
+    ->   )
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+    ->
+Query 20230522_152747_00116_fai7f failed: line 1:1: Table 'iceberg.weatheronepoint.weatheronepoint' of unsupported type already exists
+CREATE TABLE iceberg.weatheronepoint.weatheronepoint (
+  _airbyte_ab_id VARCHAR,
+  _airbyte_emitted_at TIMESTAMP,
+  _airbyte_data ROW(
+    coord ROW(lon DOUBLE, lat DOUBLE),
+    weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    base VARCHAR,
+    main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    visibility INT,
+    wind ROW(speed DOUBLE, deg INT),
+    clouds ROW(all INT),
+    dt INT,
+    sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    timezone INT,
+    id INT,
+    name VARCHAR,
+    cod INT
+  )
+) WITH (
+  format = 'ORC'
+)
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL;
+ coord_lon
+-----------
+ 48.8643
+(1 row)
+
+Query 20230522_152837_00117_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.12 [2 rows, 672B] [17 rows/s, 5.71KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon
+    -> FROM iceberg.weatheronepoint.weatheronepoint                                                                                      -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL;
+Query 20230522_152848_00118_fai7f failed: Not an Iceberg table: weatheronepoint.weatheronepoint
+
+trino> show * from iceberg;
+Query 20230522_152911_00119_fai7f failed: line 1:6: mismatched input '*'. Expecting: 'CATALOGS', 'COLUMNS', 'CREATE', 'CURRENT', 'FUNCTIONS', 'GRANTS', 'ROLE', 'ROLES', 'SCHEMAS', 'SESSION', 'STATS', 'TABLES'
+show * from iceberg
+
+trino> drop table iceberg.weatheronepoint.weatheronepoint;
+Query 20230522_153832_00120_fai7f failed: Not an Iceberg table: weatheronepoint.weatheronepoint
+
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint_iceberg (
+    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at TIMESTAMP,
+    ->   _airbyte_data ROW(
+    ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     base VARCHAR,
+    ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     visibility INT,
+    ->     wind ROW(speed DOUBLE, deg INT),
+    ->     clouds ROW(all INT),
+    ->     dt INT,
+    ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     timezone INT,
+    ->     id INT,
+    ->     name VARCHAR,
+    ->     cod INT
+    ->   )
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+Query 20230522_153918_00121_fai7f failed: Timestamp precision (3) not supported for Iceberg. Use "timestamp(6)" instead.
+
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint_iceberg (
+    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at TIMESTAMP(6),                                                                                               ->   _airbyte_data ROW(
+    ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     base VARCHAR,
+    ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     visibility INT,
+    ->     wind ROW(speed DOUBLE, deg INT),
+    ->     clouds ROW(all INT),
+    ->     dt INT,
+    ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     timezone INT,
+    ->     id INT,
+    ->     name VARCHAR,
+    ->     cod INT
+    ->   )
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+CREATE TABLE
+trino> INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+    -> SELECT
+    ->   _airbyte_ab_id,
+    ->   TIMESTAMP '1970-01-01 00:00:00 UTC' + INTERVAL '_airbyte_emitted_at' SECOND,
+    ->   CAST(json_parse(_airbyte_data) AS ROW(
+    ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     base VARCHAR,
+    ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     visibility INT,
+    ->     wind ROW(speed DOUBLE, deg INT),
+    ->     clouds ROW(all INT),
+    ->     dt INT,
+    ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     timezone INT,
+    ->     id INT,
+    ->     name VARCHAR,
+    ->     cod INT
+    ->   ))
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_154148_00123_fai7f failed: line 4:41: '_airbyte_emitted_at' is not a valid interval literal
+INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+SELECT
+  _airbyte_ab_id,
+  TIMESTAMP '1970-01-01 00:00:00 UTC' + INTERVAL '_airbyte_emitted_at' SECOND,
+  CAST(json_parse(_airbyte_data) AS ROW(
+    coord ROW(lon DOUBLE, lat DOUBLE),
+    weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    base VARCHAR,
+    main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    visibility INT,
+    wind ROW(speed DOUBLE, deg INT),
+    clouds ROW(all INT),
+    dt INT,
+    sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    timezone INT,
+    id INT,
+    name VARCHAR,
+    cod INT
+  ))
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> trino> INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+    ->     -> SELECT
+    ->     ->   _airbyte_ab_id,
+    ->     ->   TIMESTAMP '1970-01-01 00:00:00 UTC' + INTERVAL '1' SECOND * (_airbyte_emitted_at / 1000),
+    ->     ->   CAST(json_parse(_airbyte_data) AS ROW(
+    ->     ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     ->     base VARCHAR,
+    ->     ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     ->     visibility INT,
+    ->     ->     wind ROW(speed DOUBLE, deg INT),
+    ->     ->     clouds ROW(all INT),
+    ->     ->     dt INT,
+    ->     ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     ->     timezone INT,
+    ->     ->     id INT,
+    ->     ->     name VARCHAR,
+    ->     ->     cod INT
+    ->     ->   ))
+    ->     -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_154348_00124_fai7f failed: line 1:1: mismatched input 'trino'. Expecting: 'ALTER', 'ANALYZE', 'CALL', 'COMMENT', 'COMMIT', 'CREATE', 'DEALLOCATE', 'DELETE', 'DENY', 'DESC', 'DESCRIBE', 'DROP', 'EXECUTE', 'EXPLAIN', 'GRANT', 'INSERT', 'MERGE', 'PREPARE', 'REFRESH', 'RESET', 'REVOKE', 'ROLLBACK', 'SET', 'SHOW', 'START', 'TRUNCATE', 'UPDATE', 'USE', <query>
+trino> INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+    -> SELECT
+    ->   _airbyte_ab_id,
+    ->   TIMESTAMP '1970-01-01 00:00:00 UTC' + INTERVAL '1' SECOND * (_airbyte_emitted_at / 1000),
+    ->   CAST(json_parse(_airbyte_data) AS ROW(
+    ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     base VARCHAR,
+    ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     visibility INT,
+    ->     wind ROW(speed DOUBLE, deg INT),
+    ->     clouds ROW(all INT),
+    ->     dt INT,
+    ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     timezone INT,
+    ->     id INT,
+    ->     name VARCHAR,
+    ->     cod INT
+    ->   ))
+    -> FROM hive.weatheronepoint.weatheronepoint
+
+trino>
+trino> INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+    -> SELECT
+    ->   _airbyte_ab_id,
+    ->   TIMESTAMP '1970-01-01 00:00:00 UTC' + INTERVAL '1' SECOND * (_airbyte_emitted_at / 1000),
+    ->   CAST(json_parse(_airbyte_data) AS ROW(
+    ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     base VARCHAR,
+    ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     visibility INT,
+    ->     wind ROW(speed DOUBLE, deg INT),
+    ->     clouds ROW(all INT),
+    ->     dt INT,
+    ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     timezone INT,
+    ->     id INT,
+    ->     name VARCHAR,
+    ->     cod INT
+    ->   ))
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_154510_00125_fai7f failed: line 4:84: Cannot apply operator: varchar / integer
+INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+SELECT
+  _airbyte_ab_id,
+  TIMESTAMP '1970-01-01 00:00:00 UTC' + INTERVAL '1' SECOND * (_airbyte_emitted_at / 1000),
+  CAST(json_parse(_airbyte_data) AS ROW(
+    coord ROW(lon DOUBLE, lat DOUBLE),
+    weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    base VARCHAR,
+    main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    visibility INT,
+    wind ROW(speed DOUBLE, deg INT),
+    clouds ROW(all INT),
+    dt INT,
+    sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    timezone INT,
+    id INT,
+    name VARCHAR,
+    cod INT
+  ))
+FROM hive.weatheronepoint.weatheronepoint
+
+trino> INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+    -> SELECT
+    ->   _airbyte_ab_id,
+    ->   TIMESTAMP '1970-01-01 00:00:00 UTC' + INTERVAL '1' SECOND * (CAST(_airbyte_emitted_at AS BIGINT) / 1000),
+    ->   CAST(json_parse(_airbyte_data) AS ROW(
+    ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     base VARCHAR,
+    ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     visibility INT,
+    ->     wind ROW(speed DOUBLE, deg INT),
+    ->     clouds ROW(all INT),
+    ->     dt INT,
+    ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     timezone INT,
+    ->     id INT,
+    ->     name VARCHAR,
+    ->     cod INT
+    ->   ))
+    -> FROM hive.weatheronepoint.weatheronepoint;
+
+Query 20230522_154653_00126_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.39 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_154653_00126_fai7f failed: Cannot cast to row(coord row(lon double, lat double), weather array(row(id integer, main varchar, description varchar, icon varchar)), base varchar, main row(temp double, feels_like double, temp_min double, temp_max double, pressure integer, humidity integer), visibility integer, wind row(speed double, deg integer), clouds row(all integer), dt integer, sys row(type integer, id integer, country varchar, sunrise integer, sunset integer), timezone integer, id integer, name varchar, cod integer).
+_airbyte_data
+
+trino> drop table iceberg.weatheronepoint.weatheronepoint_iceberg;
+DROP TABLE
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint_iceberg (
+    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at VARCHAR,
+    ->   _airbyte_data ROW(
+    ->     coord ROW(lon DOUBLE, lat DOUBLE),
+    ->     weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    ->     base VARCHAR,
+    ->     main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    ->     visibility INT,
+    ->     wind ROW(speed DOUBLE, deg INT),
+    ->     clouds ROW(all INT),
+    ->     dt INT,
+    ->     sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    ->     timezone INT,
+    ->     id INT,
+    ->     name VARCHAR,
+    ->     cod INT
+    ->   )
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+CREATE TABLE
+trino> INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+    -> SELECT
+    -> _airbyte_ab_id,
+    -> _airbyte_emitted_at,
+    -> CAST(json_parse(_airbyte_data) AS ROW(
+    -> coord ROW(lon DOUBLE, lat DOUBLE),
+    -> weather ARRAY<ROW(id INT, main VARCHAR, description VARCHAR, icon VARCHAR)>,
+    -> base VARCHAR,
+    -> main ROW(temp DOUBLE, feels_like DOUBLE, temp_min DOUBLE, temp_max DOUBLE, pressure INT, humidity INT),
+    -> visibility INT,
+    -> wind ROW(speed DOUBLE, deg INT),
+    -> clouds ROW(all INT),
+    -> dt INT,
+    -> sys ROW(type INT, id INT, country VARCHAR, sunrise INT, sunset INT),
+    -> timezone INT,
+    -> id INT,
+    -> name VARCHAR,
+    -> cod INT
+    -> ))
+    -> FROM hive.weatheronepoint.weatheronepoint;
+
+Query 20230522_155326_00129_fai7f, FAILED, 1 node
+Splits: 1 total, 0 done (0.00%)
+0.17 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230522_155326_00129_fai7f failed: Cannot cast to row(coord row(lon double, lat double), weather array(row(id integer, main varchar, description varchar, icon varchar)), base varchar, main row(temp double, feels_like double, temp_min double, temp_max double, pressure integer, humidity integer), visibility integer, wind row(speed double, deg integer), clouds row(all integer), dt integer, sys row(type integer, id integer, country varchar, sunrise integer, sunset integer), timezone integer, id integer, name varchar, cod integer).
+_airbyte_data
+
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint_intermediate (
+    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at VARCHAR,
+    ->   _airbyte_data JSON
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+Query 20230522_155626_00130_fai7f failed: Type not supported for Iceberg: json
+
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint (
+    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at VARCHAR,                                                                                                    ->   _airbyte_data VARCHAR
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+Query 20230522_155924_00131_fai7f failed: line 1:1: Table 'iceberg.weatheronepoint.weatheronepoint' of unsupported type already exists
+CREATE TABLE iceberg.weatheronepoint.weatheronepoint (
+  _airbyte_ab_id VARCHAR,
+  _airbyte_emitted_at VARCHAR,
+  _airbyte_data VARCHAR
+) WITH (
+  format = 'ORC'
+)
+
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint_iceberg (                                                                    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at VARCHAR,
+    ->   _airbyte_data VARCHAR
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+Query 20230522_155939_00132_fai7f failed: line 1:1: Table 'iceberg.weatheronepoint.weatheronepoint_iceberg' already exists
+CREATE TABLE iceberg.weatheronepoint.weatheronepoint_iceberg (
+  _airbyte_ab_id VARCHAR,
+  _airbyte_emitted_at VARCHAR,
+  _airbyte_data VARCHAR
+) WITH (
+  format = 'ORC'
+)
+
+trino> drop table iceberg.weatheronepoint.weatheronepoint_iceberg;
+DROP TABLE
+trino> CREATE TABLE iceberg.weatheronepoint.weatheronepoint_iceberg (
+    ->   _airbyte_ab_id VARCHAR,
+    ->   _airbyte_emitted_at VARCHAR,
+    ->   _airbyte_data VARCHAR
+    -> ) WITH (
+    ->   format = 'ORC'
+    -> );
+CREATE TABLE
+trino> INSERT INTO iceberg.weatheronepoint.weatheronepoint
+    -> SELECT
+    ->   _airbyte_ab_id,
+    ->   _airbyte_emitted_at,
+    ->   _airbyte_data
+    -> FROM hive.weatheronepoint.weatheronepoint;
+Query 20230522_160058_00135_fai7f failed: Not an Iceberg table: weatheronepoint.weatheronepoint
+
+trino> INSERT INTO iceberg.weatheronepoint.weatheronepoint_iceberg
+    -> SELECT
+    ->   _airbyte_ab_id,
+    ->   _airbyte_emitted_at,
+    ->   _airbyte_data
+    -> FROM hive.weatheronepoint.weatheronepoint;
+INSERT: 2 rows
+
+Query 20230522_160114_00136_fai7f, FINISHED, 1 node
+Splits: 24 total, 24 done (100.00%)
+1.22 [2 rows, 672B] [1 rows/s, 551B/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon
+    -> FROM iceberg.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT N
+trino> select * from iceberg.weatheronepoint.weatheronepoint_iceberg;
+            _airbyte_ab_id            | _airbyte_emitted_at |                                                                       >--------------------------------------+---------------------+-----------------------------------------------------------------------> _airbyte_ab_id                       | _airbyte_emitted_at | _airbyte_data                                                         > 8ca3257e-43ef-4543-a676-3c345ce2bb8a | 1684767397000       | {"coord":{"lon":2.2852,"lat":48.8643},"weather":[{"id":803,"main":"Clo>(2 rows)
+
+Query 20230522_161332_00137_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.31 [2 rows, 1.37KB] [6 rows/s, 4.48KB/s]
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon
+    -> FROM iceberg.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT N
+    -> ;
+Query 20230522_172026_00138_fai7f failed: line 3:64: mismatched input 'N'. Expecting: 'DISTINCT', 'NULL'
+SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon
+FROM iceberg.weatheronepoint.weatheronepoint
+WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT N
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon
+    -> FROM iceberg.weatheronepoint.weatheronepoint
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL;
+Query 20230522_172038_00139_fai7f failed: Not an Iceberg table: weatheronepoint.weatheronepoint
+
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon
+    -> FROM iceberg.weatheronepoint.weatheronepoint_iceberg
+    -> WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL;
+ coord_lon
+-----------
+ 48.8643
+(1 row)
+
+Query 20230522_172102_00140_fai7f, FINISHED, 1 node
+Splits: 1 total, 1 done (100.00%)
+0.42 [2 rows, 1.37KB] [4 rows/s, 3.26KB/s]
+
+trino> show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ system
+ tpcds
+ tpch
+(5 rows)
+
+Query 20230523_115605_00010_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+1.75 [0 rows, 0B] [0 rows/s, 0B/s]
+
+trino> show schemas from hive;
+       Schema
+--------------------
+ datalake
+ default
+ information_schema
+ weatheronepoint
+(4 rows)
+
+Query 20230523_120127_00011_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.74 [4 rows, 68B] [5 rows/s, 92B/s]
+
+trino> show schemas from hive;
+       Schema
+--------------------
+ datalake
+ default
+ information_schema
+ weatheronepoint
+(4 rows)
+
+Query 20230523_121042_00012_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.21 [4 rows, 68B] [19 rows/s, 325B/s]
+
+trino>
+trino> SELECT
+    ->   json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon,
+    ->   json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lat,
+    ->   json_extract_scalar(_airbyte_data, '$.weather[0].main') AS weather_main,
+    ->   json_extract_scalar(_airbyte_data, '$.weather[0].description') AS weather_description,
+    ->   json_extract_scalar(_airbyte_data, '$.main.temp') AS main_temp,
+    ->   json_extract_scalar(_airbyte_data, '$.main.humidity') AS main_humidity,
+    ->   json_extract_scalar(_airbyte_data, '$.wind.speed') AS wind_speed,
+    ->   json_extract_scalar(_airbyte_data, '$.wind.deg') AS wind_deg
+    -> FROM hive.weatheronepoint.weatheronepoint
+    -> WHERE
+    ->   json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL
+    ->   AND json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL;
+Query 20230523_123011_00013_fai7f failed: hive-metastore:9083: java.net.SocketTimeoutException: Read timed out
+
+trino>
+trino>
+trino> SELECT json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lon
+    ->  FROM hive.weatheronepoint.weatheronepoint
+    ->  WHERE json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL;
+Query 20230523_123156_00014_fai7f failed: hive-metastore:9083: java.net.SocketTimeoutException: Read timed out
+       show catalogs;
+ Catalog
+---------
+ hive
+ iceberg
+ system
+ tpcds
+ tpch
+(5 rows)
+
+Query 20230523_123558_00017_fai7f, FINISHED, 1 node
+Splits: 11 total, 11 done (100.00%)
+0.20 [0 rows, 0B] [0 rows/s, 0B/s]
+       show schemas from hive;
+
+Query 20230523_123608_00018_fai7f, FAILED, 1 node
+Splits: 11 total, 10 done (90.91%)
+32.16 [0 rows, 0B] [0 rows/s, 0B/s]
+
+Query 20230523_123608_00018_fai7f failed: Error listing schemas for catalog hive: hive-metastore:9083: java.net.SocketTimeoutException: Read timed out
+
+trino>
