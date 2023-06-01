@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A dbt model using data from hive.weatheronepoint.weatheronepoint"
+    columns:
+      - name: coord_lon
+        description: "Longitude coordinate"
+        tests:
+          - not_null
+      - name: coord_lat
+        description: "Latitude coordinate"
+        tests:
+          - not_null
+      - name: weather_main
+        description: "Main weather description"
+        tests:
+          - not_null
+      - name: weather_description
+        description: "Detailed weather description"
+        tests:
+          - not_null
+      - name: main_temp
+        description: "Main temperature"
+        tests:
+          - not_null
+      - name: main_humidity
+        description: "Main humidity"
+        tests:
+          - not_null
+      - name: wind_speed
+        description: "Wind speed"
+        tests:
+          - not_null
+      - name: wind_deg
+        description: "Wind degree"
+        tests:
+          - not_null

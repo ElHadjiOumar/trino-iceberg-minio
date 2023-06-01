@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: hive
+    database: hive
+    schema: weatheronepoint
+    tables:
+      - name: weatheronepoint

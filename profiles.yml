@@ -1,0 +1,13 @@
+projet_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: trino
+      method: none  # optional, one of {none | ldap | kerberos}
+      user: Trino
+      password:  # required if method is ldap or kerberos
+      catalog: iceberg
+      host: localhost
+      port: 8080
+      schema: lakehouse  
+      threads: 1
