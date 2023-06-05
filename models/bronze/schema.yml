@@ -4,35 +4,15 @@ models:
   - name: weatheronepoint
     description: "A dbt model using data from lakehouse.bronze.weatheronepoint"
     columns:
-      - name: coord_lon
-        description: "Longitude coordinate"
+      - name: _airbyte_ab_id
+        description: "id"
         tests:
           - not_null
-      - name: coord_lat
-        description: "Latitude coordinate"
+      - name: _airbyte_emitted_at
+        description: "timestamp"
         tests:
           - not_null
-      - name: weather_main
-        description: "Main weather description"
-        tests:
-          - not_null
-      - name: weather_description
-        description: "Detailed weather description"
-        tests:
-          - not_null
-      - name: main_temp
-        description: "Main temperature"
-        tests:
-          - not_null
-      - name: main_humidity
-        description: "Main humidity"
-        tests:
-          - not_null
-      - name: wind_speed
-        description: "Wind speed"
-        tests:
-          - not_null
-      - name: wind_deg
-        description: "Wind degree"
+      - name: _airbyte_data
+        description: "Main data"
         tests:
           - not_null

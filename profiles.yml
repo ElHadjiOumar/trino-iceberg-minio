@@ -9,6 +9,16 @@ projet_dbt:
       catalog: lakehouse
       host: localhost
       port: 8080
-      schema: bronze  
-      table: weatheronepoint
+      schema: bronze  # a faire essayer d'envoyer vers silver
+      table : weatheronepoint 
+      threads: 1
+    silver:
+      type: trino
+      method: none
+      user: Trino
+      password: 
+      catalog: lakehouse
+      host: localhost
+      port: 8080
+      schema: silver
       threads: 1
