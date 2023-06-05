@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A dbt model using data from hive.weatheronepoint.weatheronepoint"
+  - name: weatheronepoint
+    description: "A dbt model using data from lakehouse.bronze.weatheronepoint"
     columns:
       - name: coord_lon
         description: "Longitude coordinate"

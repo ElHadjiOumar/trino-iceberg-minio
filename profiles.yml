@@ -6,8 +6,9 @@ projet_dbt:
       method: none  # optional, one of {none | ldap | kerberos}
       user: Trino
       password:  # required if method is ldap or kerberos
-      catalog: iceberg
+      catalog: lakehouse
       host: localhost
       port: 8080
-      schema: lakehouse  
+      schema: bronze  
+      table: weatheronepoint
       threads: 1

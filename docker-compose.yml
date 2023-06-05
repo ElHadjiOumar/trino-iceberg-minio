@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  trino-coordinator:
+  trino:
     image: 'trinodb/trino:latest'
     hostname: trino-coordinator
     ports:
@@ -59,26 +59,26 @@ services:
     networks:
       - trino-network
 
-  minio-setup:
-    depends_on:
-      - minio
-    image: minio/mc
-    container_name: mc
-    environment:
-      - MINIO_ACCESS_KEY=minio
-      - MINIO_SECRET_KEY=minio123
-    networks:
-      - trino-network
-    volumes:
-      - minio-data:/mnt/data
-    entrypoint: >
-      /bin/sh -c "
-      until (/usr/bin/mc config host add minio http://minio:9000 minio minio123) do echo '...waiting...' && sleep 1; done;
-      /usr/bin/mc rm -r --force minio/datalake;
-      /usr/bin/mc mb minio/datalake;
-      /usr/bin/mc policy set public minio/datalake;
-      exit 0;
-      "   
+  # minio-setup:
+  #   depends_on:
+  #     - minio
+  #   image: minio/mc
+  #   container_name: mc
+  #   environment:
+  #     - MINIO_ACCESS_KEY=minio
+  #     - MINIO_SECRET_KEY=minio123
+  #   networks:
+  #     - trino-network
+  #   volumes:
+  #     - minio-data:/mnt/data
+  #   entrypoint: >
+  #     /bin/sh -c "
+  #     until (/usr/bin/mc config host add minio http://minio:9000 minio minio123) do echo '...waiting...' && sleep 1; done;
+  #     /usr/bin/mc rm -r --force minio/datalake;
+  #     /usr/bin/mc mb minio/datalake;
+  #     /usr/bin/mc policy set public minio/datalake;
+  #     exit 0;
+  #     "   
 
 
 volumes:
