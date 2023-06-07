@@ -6,3 +6,9 @@ sources:
     schema: weather
     tables:
       - name: weather
+
+  - name: sourcesilever
+    database: lakehouse
+    schema: silver
+    tables:
+      - name: weathersil

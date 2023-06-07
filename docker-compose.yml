@@ -9,14 +9,14 @@ services:
       - ./etc:/etc/trino
     networks:
       - trino-network
-  
+
   clickhouse:
-    image: bitnami/clickhouse:latest
+    image: clickhouse/clickhouse-server
     ports : 
       - '8123:8123'
     environment:
       - CLICKHOUSE_ADMIN_PASSWORD=password123
-        CLICKHOUSE_HTTP_PORT=8123
+      - ALLOW_EMPTY_PASSWORD=no
     networks:
       - trino-network
 

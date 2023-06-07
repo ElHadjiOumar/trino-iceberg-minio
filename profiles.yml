@@ -10,15 +10,19 @@ projet_dbt:
       host: localhost
       port: 8080
       schema: bronze  # a faire essayer d'envoyer vers silver
-      table : weatheronepoint 
+      # table : weatheronepoint 
       threads: 1
-    silver:
+    gold:
       type: trino
-      method: none
+      method: none  # optional, one of {none | ldap | kerberos}
       user: Trino
-      password: 
-      catalog: lakehouse
+      password:  # required if method is ldap or kerberos
+      catalog: clickhouse
       host: localhost
       port: 8080
-      schema: silver
-      threads: 1
+      schema: gold  # a faire essayer d'envoyer vers silver
+
+
+
+
+
