@@ -14,10 +14,10 @@ services:
       - ./etc:/etc/trino
     networks:
       - trino-network
-  
+
 
   dbt:
-    build: .
+    build: /docker/dbt
     hostname: dbt
     networks:
       - trino-network
@@ -32,13 +32,27 @@ services:
 
   clickhouse:
     image: clickhouse/clickhouse-server
-    ports : 
+    ports :
       - '8123:8123'
     environment:
       - CLICKHOUSE_ADMIN_PASSWORD=password123
       - ALLOW_EMPTY_PASSWORD=no
     networks:
       - trino-network
+
+  # prefect:
+  #   image: prefecthq/prefect:2-python3.10
+  #   restart: always
+  #   volumes:
+  #     - ./script/prefect-script.sh:/prefect-script.sh
+  #   # volumes: 
+  #   #   - prefect:~/.prefect
+  #   # entrypoint: ["prefect", "orion", "start"]
+  #   entrypoint: ["/bin/bash", "/prefect-script.sh"]
+  #   environment:
+  #     - PREFECT_ORION_API_HOST=0.0.0.0
+  #   ports:
+  #     - 4200:4200
 
   mariadb:
     image: 'mariadb:latest'
@@ -88,8 +102,8 @@ services:
     command: server /mnt/data  --console-address ":9001"
     networks:
       - trino-network
-  
-  
+
+
   init:
       image: airbyte/init:${VERSION}
       logging: *default-logging
@@ -349,28 +363,6 @@ services:
         - server
 
 
-  # minio-setup:
-  #   depends_on:
-  #     - minio
-  #   image: minio/mc
-  #   container_name: mc
-  #   environment:
-  #     - MINIO_ACCESS_KEY=minio
-  #     - MINIO_SECRET_KEY=minio123
-  #   networks:
-  #     - trino-network
-  #   volumes:
-  #     - minio-data:/mnt/data
-  #   entrypoint: >
-  #     /bin/sh -c "
-  #     until (/usr/bin/mc config host add minio http://minio:9000 minio minio123) do echo '...waiting...' && sleep 1; done;
-  #     /usr/bin/mc rm -r --force minio/datalake;
-  #     /usr/bin/mc mb minio/datalake;
-  #     /usr/bin/mc policy set public minio/datalake;
-  #     exit 0;
-  #     "   
-
-
 volumes:
   minio-data:
     driver: local
@@ -378,6 +370,13 @@ volumes:
     driver: local
   workspace:
     name: ${WORKSPACE_DOCKER_MOUNT}
+  postgres_data:
+    driver: local
+
+  volumes:
+    driver: local
+  prefect:
+    driver: local
   # the data volume is only needed for backward compatibility; when users upgrade
   # from an old Airbyte version that relies on file-based configs, the server needs
   # to read this volume to copy their configs to the database
@@ -391,3 +390,44 @@ configs:
 networks:
   trino-network:
     driver: bridge
+
+
+
+
+
+
+
+
+  # prefect:
+  #     hostname: prefect
+  #     build: /docker/prefect
+
+  #     environment:
+  #       - PREFECT__SERVER__DATABASE_URL=postgres://prefect:prefect@test-db:5432/prefect
+  #       - PREFECT_SERVER_API_HOST=0.0.0.0
+  #       - PREFECT_API_URL=0.0.0.0:4200/api
+  #     depends_on:
+  #       - test-db
+  #     networks:
+  #       - trino-network
+  #     ports:
+  #       - "4200:4200"
+  #     entrypoint: ["prefect", "server", "start"]
+
+  # test-db:
+  #   image: postgres:13
+  #   ports:
+  #     - 15432:5432
+  #   environment:
+  #     POSTGRES_USER: prefect
+  #     POSTGRES_PASSWORD: prefect
+  #     POSTGRES_DB: prefect
+  #     LANG: 'C.UTF-8'
+  #     LANGUAGE: 'C.UTF-8'
+  #     LC_ALL: 'C.UTF-8'
+  #     LC_COLLATE: 'C.UTF-8'
+  #     LC_CTYPE: 'C.UTF-8'
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - trino-network

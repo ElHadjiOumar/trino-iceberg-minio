@@ -25,7 +25,8 @@ with bronze_data  as (
   json_extract_scalar(_airbyte_data, '$.main.temp') AS main_temp,
   json_extract_scalar(_airbyte_data, '$.main.humidity') AS main_humidity,
   json_extract_scalar(_airbyte_data, '$.wind.speed') AS wind_speed,
-  json_extract_scalar(_airbyte_data, '$.wind.deg') AS wind_deg
+  json_extract_scalar(_airbyte_data, '$.wind.deg') AS wind_deg,
+  json_extract_scalar(_airbyte_data, '$.dt') AS dt
   FROM  lakehouse.bronze.weatheronepoint
   WHERE
   json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL
