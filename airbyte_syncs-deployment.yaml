@@ -1,0 +1,44 @@
+###
+### A complete description of a Prefect Deployment for flow 'airbyte-syncs'
+###
+name: elt
+description: null
+version: 7d0808b729ae9ed31872794f1dca0e4d
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: null
+tags: []
+parameters: {}
+schedule:
+  cron: '* * * * *'
+  timezone: null
+  day_or: true
+is_schedule_active: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: airbyte-syncs
+manifest_path: null
+storage: null
+path: C:\Users\eho.mbengue\OneDrive - ONEPOINT\Documents\MODERNEDATAPLATFORM\Modern
+  Data platform dev git\trino-iceberg-minio
+entrypoint: test.py:airbyte_syncs
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties: {}
+  required: null
+  definitions: null
+timestamp: '2023-06-12T10:35:36.546907+00:00'
