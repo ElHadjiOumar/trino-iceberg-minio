@@ -12,7 +12,7 @@ with silver_data as (
       coord_lat,
       CAST(main_temp AS DOUBLE) AS main_temp,
       CAST(main_humidity AS DOUBLE) AS main_humidity,
-      CAST(wind_speed AS DOUBLE) AS wind_speed,
+      CAST(wind_speed AS DOUBLE) AS wind_speed
     FROM  {{ source('sourcesilever', 'weathersil') }}
 
 )

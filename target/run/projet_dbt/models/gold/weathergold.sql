@@ -19,8 +19,7 @@ with silver_data as (
       coord_lat,
       CAST(main_temp AS DOUBLE) AS main_temp,
       CAST(main_humidity AS DOUBLE) AS main_humidity,
-      CAST(wind_speed AS DOUBLE) AS wind_speed,
-      dt
+      CAST(wind_speed AS DOUBLE) AS wind_speed
     FROM  lakehouse.silver.weathersil
 
 )
@@ -28,7 +27,6 @@ with silver_data as (
 select 
     coord_lon,
     coord_lat,
-    dt,
     AVG(main_temp) AS avg_temp,
     AVG(main_humidity) AS avg_humidity,
     AVG(wind_speed) AS avg_wind_speed

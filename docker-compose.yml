@@ -28,6 +28,7 @@ services:
       - ./models:/usr/app/dbt/models
       - ./macros:/usr/app/dbt/macros
       - ./target:/usr/app/dbt/target
+      - ./prefectdemo_dbt.py:/usr/app/dbt/prefectdemo_dbt.py
     entrypoint: ["/bin/bash", "/dbt-script.sh"]
 
   clickhouse:
@@ -39,20 +40,6 @@ services:
       - ALLOW_EMPTY_PASSWORD=no
     networks:
       - trino-network
-
-  # prefect:
-  #   image: prefecthq/prefect:2-python3.10
-  #   restart: always
-  #   volumes:
-  #     - ./script/prefect-script.sh:/prefect-script.sh
-  #   # volumes: 
-  #   #   - prefect:~/.prefect
-  #   # entrypoint: ["prefect", "orion", "start"]
-  #   entrypoint: ["/bin/bash", "/prefect-script.sh"]
-  #   environment:
-  #     - PREFECT_ORION_API_HOST=0.0.0.0
-  #   ports:
-  #     - 4200:4200
 
   mariadb:
     image: 'mariadb:latest'
@@ -363,6 +350,7 @@ services:
         - server
 
 
+
 volumes:
   minio-data:
     driver: local
@@ -375,8 +363,8 @@ volumes:
 
   volumes:
     driver: local
-  prefect:
-    driver: local
+  # prefect:
+  #   driver: local
   # the data volume is only needed for backward compatibility; when users upgrade
   # from an old Airbyte version that relies on file-based configs, the server needs
   # to read this volume to copy their configs to the database
@@ -390,44 +378,3 @@ configs:
 networks:
   trino-network:
     driver: bridge
-
-
-
-
-
-
-
-
-  # prefect:
-  #     hostname: prefect
-  #     build: /docker/prefect
-
-  #     environment:
-  #       - PREFECT__SERVER__DATABASE_URL=postgres://prefect:prefect@test-db:5432/prefect
-  #       - PREFECT_SERVER_API_HOST=0.0.0.0
-  #       - PREFECT_API_URL=0.0.0.0:4200/api
-  #     depends_on:
-  #       - test-db
-  #     networks:
-  #       - trino-network
-  #     ports:
-  #       - "4200:4200"
-  #     entrypoint: ["prefect", "server", "start"]
-
-  # test-db:
-  #   image: postgres:13
-  #   ports:
-  #     - 15432:5432
-  #   environment:
-  #     POSTGRES_USER: prefect
-  #     POSTGRES_PASSWORD: prefect
-  #     POSTGRES_DB: prefect
-  #     LANG: 'C.UTF-8'
-  #     LANGUAGE: 'C.UTF-8'
-  #     LC_ALL: 'C.UTF-8'
-  #     LC_COLLATE: 'C.UTF-8'
-  #     LC_CTYPE: 'C.UTF-8'
-  #   volumes:
-  #     - postgres_data:/var/lib/postgresql/data
-  #   networks:
-  #     - trino-network
