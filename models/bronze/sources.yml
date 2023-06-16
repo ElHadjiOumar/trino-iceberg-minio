@@ -7,7 +7,7 @@ sources:
     tables:
       - name: weather
 
-  - name: sourcesilever
+  - name: sourcesilver
     database: lakehouse
     schema: silver
     tables:

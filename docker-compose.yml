@@ -21,6 +21,9 @@ services:
     hostname: dbt
     networks:
       - trino-network
+    environment:
+    - PREFECT_SERVER_API_HOST=0.0.0.0
+    - PREFECT_API_URL=http://0.0.0.0:4200/api
     volumes:
       - ./script/dbt-script.sh:/dbt-script.sh
       - ./dbt_project.yml:/usr/app/dbt/dbt_project.yml

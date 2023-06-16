@@ -50,12 +50,12 @@ deploiement_dbt = Deployment.build_from_flow(
 )
 
 def main_airflow():
-    response = run_deployment(name="flow_airbyte/cron_airflow")
-    print(response)
+    run_deployment(name="flow_airbyte/cron_airflow")
+    # print(response)
 
 def main_dbt():
-    response = run_deployment(name="flow_dbt/cron_dbt")
-    print(response)
+    run_deployment(name="flow_dbt/cron_dbt")
+    # print(response)
 
 deploiement_airbyte.apply()
 deploiement_dbt.apply()

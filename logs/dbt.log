@@ -12914,3 +12914,860 @@ group by coord_lon, coord_lat
 [0m22:39:01.782642 [debug] [MainThread]: Command `dbt run` succeeded at 22:39:01.782642 after 3.09 seconds
 [0m22:39:01.784067 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CD609CA800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CD60D44B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CD636D7820>]}
 [0m22:39:01.784067 [debug] [MainThread]: Flushing usage events
+[0m15:57:20.937218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016139DBA860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613952A4A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613952A230>]}
+
+
+============================== 15:57:20.951957 | 27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6 ==============================
+[0m15:57:20.951957 [info ] [MainThread]: Running with dbt=1.5.1
+[0m15:57:20.953455 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\eho.mbengue\\OneDrive - ONEPOINT\\Documents\\MODERNEDATAPLATFORM\\Modern Data platform dev git\\trino-iceberg-minio', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'C:\\Users\\eho.mbengue\\OneDrive - ONEPOINT\\Documents\\MODERNEDATAPLATFORM\\Modern Data platform dev git\\trino-iceberg-minio\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m15:57:21.191410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613952A560>]}
+[0m15:57:21.207061 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613C983490>]}
+[0m15:57:21.231795 [debug] [MainThread]: checksum: 7c72c19e20044af580a3af263f31a79e51001c9cb775ec446193990a9604b428, vars: {}, profile: , target: dev, version: 1.5.1
+[0m15:57:21.253663 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m15:57:21.255638 [debug] [MainThread]: previous checksum: 7c72c19e20044af580a3af263f31a79e51001c9cb775ec446193990a9604b428, current checksum: 30a2aa5c6561254d27aa1b1fe0dd3959d8f05abacdac4a7da6dd23f525d3e478
+[0m15:57:21.255638 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:57:21.256681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613C9DB5B0>]}
+[0m15:57:23.040727 [debug] [MainThread]: 1699: static parser successfully parsed bronze\weatheronepoint.sql
+[0m15:57:23.093911 [debug] [MainThread]: 1699: static parser successfully parsed gold\weathergold.sql
+[0m15:57:23.097080 [debug] [MainThread]: 1699: static parser successfully parsed silver\weathersil.sql
+[0m15:57:23.216753 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613C95ABF0>]}
+[0m15:57:23.226969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613C95A650>]}
+[0m15:57:23.226969 [info ] [MainThread]: Found 3 models, 3 tests, 0 snapshots, 0 analyses, 332 macros, 0 operations, 0 seed files, 2 sources, 0 exposures, 0 metrics, 0 groups
+[0m15:57:23.226969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613BA63430>]}
+[0m15:57:23.226969 [info ] [MainThread]: 
+[0m15:57:23.226969 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m15:57:23.226969 [debug] [ThreadPool]: Acquiring new trino connection 'list_lakehouse'
+[0m15:57:23.253884 [debug] [ThreadPool]: Using trino connection "list_lakehouse"
+[0m15:57:23.254252 [debug] [ThreadPool]: On list_lakehouse: select distinct schema_name
+    from lakehouse.INFORMATION_SCHEMA.schemata
+[0m15:57:23.255270 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:57:23.968043 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m15:57:23.971676 [debug] [ThreadPool]: On list_lakehouse: Close
+[0m15:57:23.976755 [debug] [ThreadPool]: Using trino connection "list_lakehouse"
+[0m15:57:23.976755 [debug] [ThreadPool]: On list_lakehouse: select distinct schema_name
+    from lakehouse.INFORMATION_SCHEMA.schemata
+[0m15:57:23.976755 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:57:24.160159 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:24.162890 [debug] [ThreadPool]: On list_lakehouse: Close
+[0m15:57:24.169992 [debug] [ThreadPool]: Acquiring new trino connection 'list_lakehouse_gold'
+[0m15:57:24.194485 [debug] [ThreadPool]: Using trino connection "list_lakehouse_gold"
+[0m15:57:24.195066 [debug] [ThreadPool]: On list_lakehouse_gold: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'gold'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'gold')
+[0m15:57:24.196581 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:57:25.669552 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m15:57:25.672096 [debug] [ThreadPool]: On list_lakehouse_gold: ROLLBACK
+[0m15:57:25.672096 [debug] [ThreadPool]: On list_lakehouse_gold: Close
+[0m15:57:25.672096 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lakehouse_gold, now list_lakehouse_bronze)
+[0m15:57:25.681908 [debug] [ThreadPool]: Using trino connection "list_lakehouse_bronze"
+[0m15:57:25.681908 [debug] [ThreadPool]: On list_lakehouse_bronze: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'bronze')
+[0m15:57:25.686715 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:57:26.139842 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:26.144175 [debug] [ThreadPool]: On list_lakehouse_bronze: ROLLBACK
+[0m15:57:26.146431 [debug] [ThreadPool]: On list_lakehouse_bronze: Close
+[0m15:57:26.146969 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lakehouse_bronze, now list_lakehouse_silver)
+[0m15:57:26.161701 [debug] [ThreadPool]: Using trino connection "list_lakehouse_silver"
+[0m15:57:26.164237 [debug] [ThreadPool]: On list_lakehouse_silver: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'silver'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'silver')
+[0m15:57:26.164237 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:57:26.610612 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:26.615142 [debug] [ThreadPool]: On list_lakehouse_silver: ROLLBACK
+[0m15:57:26.617371 [debug] [ThreadPool]: On list_lakehouse_silver: Close
+[0m15:57:26.621980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613CB65AE0>]}
+[0m15:57:26.621980 [debug] [MainThread]: On master: COMMIT
+[0m15:57:26.621980 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:57:26.627021 [info ] [MainThread]: 
+[0m15:57:26.649103 [debug] [Thread-1 (]: Began running node model.projet_dbt.weatheronepoint
+[0m15:57:26.653220 [info ] [Thread-1 (]: 1 of 2 START sql table model bronze.weatheronepoint ............................ [RUN]
+[0m15:57:26.658737 [debug] [Thread-1 (]: Acquiring new trino connection 'model.projet_dbt.weatheronepoint'
+[0m15:57:26.660736 [debug] [Thread-1 (]: Began compiling node model.projet_dbt.weatheronepoint
+[0m15:57:26.676918 [debug] [Thread-1 (]: Writing injected SQL for node "model.projet_dbt.weatheronepoint"
+[0m15:57:26.683085 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weatheronepoint (compile): 15:57:26.661738 => 15:57:26.680996
+[0m15:57:26.686552 [debug] [Thread-1 (]: Began executing node model.projet_dbt.weatheronepoint
+[0m15:57:26.768019 [debug] [Thread-1 (]: Writing runtime sql for node "model.projet_dbt.weatheronepoint"
+[0m15:57:26.772537 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m15:57:26.774567 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: create table lakehouse.bronze.weatheronepoint__dbt_tmp
+      
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below 
+*/
+
+
+
+with source_data as (
+
+    SELECT
+    *
+    FROM  source.weather.weather
+    WHERE
+    json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL
+    AND json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+[0m15:57:26.776562 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:57:31.583797 [debug] [Thread-1 (]: SQL status: SUCCESS in 5.0 seconds
+[0m15:57:31.591708 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m15:57:31.591708 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: alter table "lakehouse"."bronze"."weatheronepoint" rename to lakehouse.bronze.weatheronepoint__dbt_backup
+[0m15:57:31.742212 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:31.747285 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m15:57:31.748491 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: alter table lakehouse.bronze.weatheronepoint__dbt_tmp rename to lakehouse.bronze.weatheronepoint
+[0m15:57:31.931818 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:31.942719 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m15:57:31.943719 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: drop table if exists lakehouse.bronze.weatheronepoint__dbt_backup
+[0m15:57:32.254008 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:32.287892 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weatheronepoint (execute): 15:57:26.689139 => 15:57:32.287892
+[0m15:57:32.287892 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: ROLLBACK
+[0m15:57:32.287892 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: Close
+[0m15:57:32.287892 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613CC6FC10>]}
+[0m15:57:32.294354 [info ] [Thread-1 (]: 1 of 2 OK created sql table model bronze.weatheronepoint ....................... [[32mSUCCESS[0m in 5.63s]
+[0m15:57:32.296885 [debug] [Thread-1 (]: Finished running node model.projet_dbt.weatheronepoint
+[0m15:57:32.296885 [debug] [Thread-1 (]: Began running node model.projet_dbt.weathersil
+[0m15:57:32.296885 [info ] [Thread-1 (]: 2 of 2 START sql table model silver.weathersil ................................. [RUN]
+[0m15:57:32.296885 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.projet_dbt.weatheronepoint, now model.projet_dbt.weathersil)
+[0m15:57:32.303831 [debug] [Thread-1 (]: Began compiling node model.projet_dbt.weathersil
+[0m15:57:32.306891 [debug] [Thread-1 (]: Writing injected SQL for node "model.projet_dbt.weathersil"
+[0m15:57:32.311948 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weathersil (compile): 15:57:32.303831 => 15:57:32.306891
+[0m15:57:32.312463 [debug] [Thread-1 (]: Began executing node model.projet_dbt.weathersil
+[0m15:57:32.320992 [debug] [Thread-1 (]: Writing runtime sql for node "model.projet_dbt.weathersil"
+[0m15:57:32.332540 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weathersil"
+[0m15:57:32.334537 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: create table lakehouse.silver.weathersil__dbt_tmp
+      
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below 
+*/
+
+
+
+with bronze_data  as (
+
+    SELECT
+  json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon,
+  json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lat,
+  json_extract_scalar(_airbyte_data, '$.weather[0].main') AS weather_main,
+  json_extract_scalar(_airbyte_data, '$.weather[0].description') AS weather_description,
+  CAST(json_extract_scalar(_airbyte_data, '$.main.temp') AS DOUBLE) - 273.15 AS main_temp,
+  json_extract_scalar(_airbyte_data, '$.main.humidity') AS main_humidity,
+  json_extract_scalar(_airbyte_data, '$.main.pressure') AS main_pressure,
+--   json_extract_scalar(_airbyte_data, '$.main.sea_level') AS sea_level,
+--   json_extract_scalar(_airbyte_data, '$.main.grnd_level') AS grnd_level,
+  json_extract_scalar(_airbyte_data, '$.wind.speed') AS wind_speed,
+--   json_extract_scalar(_airbyte_data, '$.wind.deg') AS wind_deg,
+--   json_extract_scalar(_airbyte_data, '$.wind.gust') AS wind_gust,
+--   json_extract_scalar(_airbyte_data, '$.rain.1h') AS rain_1h,
+  json_extract_scalar(_airbyte_data, '$.clouds.all') AS clouds,
+  json_extract_scalar(_airbyte_data, '$.visibility') AS visibility,
+ cast(from_unixtime(CAST(json_extract_scalar(_airbyte_data, '$.dt') AS DOUBLE)) at time zone 'Europe/Paris' as timestamp(6) with time zone) AS dt,
+ cast(from_unixtime(CAST(json_extract_scalar(_airbyte_data, '$.sys.sunrise') AS DOUBLE)) at time zone 'Europe/Paris' as timestamp(6) with time zone) AS sunrise,
+ cast(from_unixtime(CAST(json_extract_scalar(_airbyte_data, '$.sys.sunset') AS DOUBLE)) at time zone 'Europe/Paris' as timestamp(6) with time zone) AS sunset,
+  json_extract_scalar(_airbyte_data, '$.sys.type') AS sys_type,
+  json_extract_scalar(_airbyte_data, '$.sys.id') AS sys_id,
+  json_extract_scalar(_airbyte_data, '$.sys.country') AS sys_country,
+  json_extract_scalar(_airbyte_data, '$.timezone') AS timezone,
+  json_extract_scalar(_airbyte_data, '$.id') AS city_id,
+  json_extract_scalar(_airbyte_data, '$.name') AS city_name,
+  json_extract_scalar(_airbyte_data, '$.cod') AS response_code
+   FROM  lakehouse.bronze.weatheronepoint
+  WHERE
+  json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL
+  AND json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL
+
+)
+
+select *
+from bronze_data 
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+[0m15:57:32.338065 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:57:34.355664 [debug] [Thread-1 (]: SQL status: SUCCESS in 2.0 seconds
+[0m15:57:34.361862 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weathersil"
+[0m15:57:34.361862 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: alter table "lakehouse"."silver"."weathersil" rename to lakehouse.silver.weathersil__dbt_backup
+[0m15:57:34.584040 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:34.591894 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weathersil"
+[0m15:57:34.597058 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: alter table lakehouse.silver.weathersil__dbt_tmp rename to lakehouse.silver.weathersil
+[0m15:57:34.809009 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:34.811541 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weathersil"
+[0m15:57:34.816575 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: drop table if exists lakehouse.silver.weathersil__dbt_backup
+[0m15:57:35.195785 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:57:35.204778 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weathersil (execute): 15:57:32.312463 => 15:57:35.203694
+[0m15:57:35.206648 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: ROLLBACK
+[0m15:57:35.206648 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: Close
+[0m15:57:35.212369 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '27a8d3ed-d5fc-4c6a-923a-9d0f04409bb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613CA77C10>]}
+[0m15:57:35.216882 [info ] [Thread-1 (]: 2 of 2 OK created sql table model silver.weathersil ............................ [[32mSUCCESS[0m in 2.92s]
+[0m15:57:35.221589 [debug] [Thread-1 (]: Finished running node model.projet_dbt.weathersil
+[0m15:57:35.227550 [debug] [MainThread]: On master: COMMIT
+[0m15:57:35.230573 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:57:35.232444 [debug] [MainThread]: Connection 'list_lakehouse' was properly closed.
+[0m15:57:35.233101 [debug] [MainThread]: Connection 'list_lakehouse_silver' was properly closed.
+[0m15:57:35.234101 [debug] [MainThread]: Connection 'model.projet_dbt.weathersil' was properly closed.
+[0m15:57:35.235100 [info ] [MainThread]: 
+[0m15:57:35.237663 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 12.01 seconds (12.01s).
+[0m15:57:35.243634 [debug] [MainThread]: Command end result
+[0m15:57:35.268593 [info ] [MainThread]: 
+[0m15:57:35.274640 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:57:35.278223 [info ] [MainThread]: 
+[0m15:57:35.282489 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m15:57:35.286781 [debug] [MainThread]: Command `dbt run` succeeded at 15:57:35.285782 after 14.53 seconds
+[0m15:57:35.290309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016139DBA860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613CA77C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001613CB8B850>]}
+[0m15:57:35.293366 [debug] [MainThread]: Flushing usage events
+[0m15:58:40.926595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D662A800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D5D9A5C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D5D9A290>]}
+
+
+============================== 15:58:40.930545 | 9286b3d7-1baa-4ee7-a88c-ef14f9d3de75 ==============================
+[0m15:58:40.930545 [info ] [MainThread]: Running with dbt=1.5.1
+[0m15:58:40.931569 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\eho.mbengue\\OneDrive - ONEPOINT\\Documents\\MODERNEDATAPLATFORM\\Modern Data platform dev git\\trino-iceberg-minio\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\eho.mbengue\\OneDrive - ONEPOINT\\Documents\\MODERNEDATAPLATFORM\\Modern Data platform dev git\\trino-iceberg-minio', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m15:58:41.087466 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9286b3d7-1baa-4ee7-a88c-ef14f9d3de75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D5D9A560>]}
+[0m15:58:41.106418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9286b3d7-1baa-4ee7-a88c-ef14f9d3de75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D91334F0>]}
+[0m15:58:41.120682 [debug] [MainThread]: checksum: 7c72c19e20044af580a3af263f31a79e51001c9cb775ec446193990a9604b428, vars: {}, profile: , target: dev, version: 1.5.1
+[0m15:58:41.187121 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:58:41.187121 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:58:41.203674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9286b3d7-1baa-4ee7-a88c-ef14f9d3de75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D9355A20>]}
+[0m15:58:41.206212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9286b3d7-1baa-4ee7-a88c-ef14f9d3de75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D9286080>]}
+[0m15:58:41.206212 [info ] [MainThread]: Found 3 models, 3 tests, 0 snapshots, 0 analyses, 332 macros, 0 operations, 0 seed files, 2 sources, 0 exposures, 0 metrics, 0 groups
+[0m15:58:41.215115 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9286b3d7-1baa-4ee7-a88c-ef14f9d3de75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D92862C0>]}
+[0m15:58:41.217633 [info ] [MainThread]: 
+[0m15:58:41.219633 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m15:58:41.222635 [debug] [ThreadPool]: Acquiring new trino connection 'list_lakehouse'
+[0m15:58:41.241259 [debug] [ThreadPool]: Using trino connection "list_lakehouse"
+[0m15:58:41.242226 [debug] [ThreadPool]: On list_lakehouse: select distinct schema_name
+    from lakehouse.INFORMATION_SCHEMA.schemata
+[0m15:58:41.243237 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:58:41.401795 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:41.404812 [debug] [ThreadPool]: On list_lakehouse: Close
+[0m15:58:41.411517 [debug] [ThreadPool]: Using trino connection "list_lakehouse"
+[0m15:58:41.411517 [debug] [ThreadPool]: On list_lakehouse: select distinct schema_name
+    from lakehouse.INFORMATION_SCHEMA.schemata
+[0m15:58:41.411517 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:58:41.558779 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:41.561517 [debug] [ThreadPool]: On list_lakehouse: Close
+[0m15:58:41.565267 [debug] [ThreadPool]: Acquiring new trino connection 'list_lakehouse_gold'
+[0m15:58:41.579130 [debug] [ThreadPool]: Using trino connection "list_lakehouse_gold"
+[0m15:58:41.579130 [debug] [ThreadPool]: On list_lakehouse_gold: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'gold'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'gold')
+[0m15:58:41.581646 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:58:41.790732 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:41.793043 [debug] [ThreadPool]: On list_lakehouse_gold: ROLLBACK
+[0m15:58:41.793619 [debug] [ThreadPool]: On list_lakehouse_gold: Close
+[0m15:58:41.795887 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lakehouse_gold, now list_lakehouse_bronze)
+[0m15:58:41.803866 [debug] [ThreadPool]: Using trino connection "list_lakehouse_bronze"
+[0m15:58:41.806379 [debug] [ThreadPool]: On list_lakehouse_bronze: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'bronze')
+[0m15:58:41.807498 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:58:42.018896 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:42.021284 [debug] [ThreadPool]: On list_lakehouse_bronze: ROLLBACK
+[0m15:58:42.022498 [debug] [ThreadPool]: On list_lakehouse_bronze: Close
+[0m15:58:42.025391 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lakehouse_bronze, now list_lakehouse_silver)
+[0m15:58:42.031276 [debug] [ThreadPool]: Using trino connection "list_lakehouse_silver"
+[0m15:58:42.031276 [debug] [ThreadPool]: On list_lakehouse_silver: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'silver'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'silver')
+[0m15:58:42.036667 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:58:42.317668 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:42.320573 [debug] [ThreadPool]: On list_lakehouse_silver: ROLLBACK
+[0m15:58:42.321650 [debug] [ThreadPool]: On list_lakehouse_silver: Close
+[0m15:58:42.323773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9286b3d7-1baa-4ee7-a88c-ef14f9d3de75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D9383130>]}
+[0m15:58:42.326322 [debug] [MainThread]: On master: COMMIT
+[0m15:58:42.326322 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:58:42.331350 [info ] [MainThread]: 
+[0m15:58:42.348406 [debug] [Thread-1 (]: Began running node model.projet_dbt.weatheronepoint
+[0m15:58:42.350403 [info ] [Thread-1 (]: 1 of 2 START sql table model bronze.weatheronepoint ............................ [RUN]
+[0m15:58:42.355473 [debug] [Thread-1 (]: Acquiring new trino connection 'model.projet_dbt.weatheronepoint'
+[0m15:58:42.358577 [debug] [Thread-1 (]: Began compiling node model.projet_dbt.weatheronepoint
+[0m15:58:42.370313 [debug] [Thread-1 (]: Writing injected SQL for node "model.projet_dbt.weatheronepoint"
+[0m15:58:42.376407 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weatheronepoint (compile): 15:58:42.360568 => 15:58:42.374556
+[0m15:58:42.378943 [debug] [Thread-1 (]: Began executing node model.projet_dbt.weatheronepoint
+[0m15:58:42.466459 [debug] [Thread-1 (]: Writing runtime sql for node "model.projet_dbt.weatheronepoint"
+[0m15:58:42.471975 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m15:58:42.473487 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: create table lakehouse.bronze.weatheronepoint__dbt_tmp
+      
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below 
+*/
+
+
+
+with source_data as (
+
+    SELECT
+    *
+    FROM  source.weather.weather
+    WHERE
+    json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL
+    AND json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+[0m15:58:42.473487 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:58:43.923689 [debug] [Thread-1 (]: SQL status: SUCCESS in 1.0 seconds
+[0m15:58:43.942577 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m15:58:43.947152 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: alter table "lakehouse"."bronze"."weatheronepoint" rename to lakehouse.bronze.weatheronepoint__dbt_backup
+[0m15:58:44.228224 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:44.235193 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m15:58:44.237538 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: alter table lakehouse.bronze.weatheronepoint__dbt_tmp rename to lakehouse.bronze.weatheronepoint
+[0m15:58:44.440409 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:44.454040 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m15:58:44.454040 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: drop table if exists lakehouse.bronze.weatheronepoint__dbt_backup
+[0m15:58:44.781613 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:44.821728 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weatheronepoint (execute): 15:58:42.380515 => 15:58:44.821728
+[0m15:58:44.821728 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: ROLLBACK
+[0m15:58:44.821728 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: Close
+[0m15:58:44.826240 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9286b3d7-1baa-4ee7-a88c-ef14f9d3de75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D9461FC0>]}
+[0m15:58:44.826240 [info ] [Thread-1 (]: 1 of 2 OK created sql table model bronze.weatheronepoint ....................... [[32mSUCCESS[0m in 2.47s]
+[0m15:58:44.831777 [debug] [Thread-1 (]: Finished running node model.projet_dbt.weatheronepoint
+[0m15:58:44.837523 [debug] [Thread-1 (]: Began running node model.projet_dbt.weathersil
+[0m15:58:44.839522 [info ] [Thread-1 (]: 2 of 2 START sql table model silver.weathersil ................................. [RUN]
+[0m15:58:44.846632 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.projet_dbt.weatheronepoint, now model.projet_dbt.weathersil)
+[0m15:58:44.849179 [debug] [Thread-1 (]: Began compiling node model.projet_dbt.weathersil
+[0m15:58:44.863343 [debug] [Thread-1 (]: Writing injected SQL for node "model.projet_dbt.weathersil"
+[0m15:58:44.871561 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weathersil (compile): 15:58:44.852271 => 15:58:44.870037
+[0m15:58:44.875589 [debug] [Thread-1 (]: Began executing node model.projet_dbt.weathersil
+[0m15:58:44.885181 [debug] [Thread-1 (]: Writing runtime sql for node "model.projet_dbt.weathersil"
+[0m15:58:44.901506 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weathersil"
+[0m15:58:44.903038 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: create table lakehouse.silver.weathersil__dbt_tmp
+      
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below 
+*/
+
+
+
+with bronze_data  as (
+
+    SELECT
+  json_extract_scalar(_airbyte_data, '$.coord.lon') AS coord_lon,
+  json_extract_scalar(_airbyte_data, '$.coord.lat') AS coord_lat,
+  json_extract_scalar(_airbyte_data, '$.weather[0].main') AS weather_main,
+  json_extract_scalar(_airbyte_data, '$.weather[0].description') AS weather_description,
+  CAST(json_extract_scalar(_airbyte_data, '$.main.temp') AS DOUBLE) - 273.15 AS main_temp,
+  json_extract_scalar(_airbyte_data, '$.main.humidity') AS main_humidity,
+  json_extract_scalar(_airbyte_data, '$.main.pressure') AS main_pressure,
+--   json_extract_scalar(_airbyte_data, '$.main.sea_level') AS sea_level,
+--   json_extract_scalar(_airbyte_data, '$.main.grnd_level') AS grnd_level,
+  json_extract_scalar(_airbyte_data, '$.wind.speed') AS wind_speed,
+--   json_extract_scalar(_airbyte_data, '$.wind.deg') AS wind_deg,
+--   json_extract_scalar(_airbyte_data, '$.wind.gust') AS wind_gust,
+--   json_extract_scalar(_airbyte_data, '$.rain.1h') AS rain_1h,
+  json_extract_scalar(_airbyte_data, '$.clouds.all') AS clouds,
+  json_extract_scalar(_airbyte_data, '$.visibility') AS visibility,
+ cast(from_unixtime(CAST(json_extract_scalar(_airbyte_data, '$.dt') AS DOUBLE)) at time zone 'Europe/Paris' as timestamp(6) with time zone) AS dt,
+ cast(from_unixtime(CAST(json_extract_scalar(_airbyte_data, '$.sys.sunrise') AS DOUBLE)) at time zone 'Europe/Paris' as timestamp(6) with time zone) AS sunrise,
+ cast(from_unixtime(CAST(json_extract_scalar(_airbyte_data, '$.sys.sunset') AS DOUBLE)) at time zone 'Europe/Paris' as timestamp(6) with time zone) AS sunset,
+  json_extract_scalar(_airbyte_data, '$.sys.type') AS sys_type,
+  json_extract_scalar(_airbyte_data, '$.sys.id') AS sys_id,
+  json_extract_scalar(_airbyte_data, '$.sys.country') AS sys_country,
+  json_extract_scalar(_airbyte_data, '$.timezone') AS timezone,
+  json_extract_scalar(_airbyte_data, '$.id') AS city_id,
+  json_extract_scalar(_airbyte_data, '$.name') AS city_name,
+  json_extract_scalar(_airbyte_data, '$.cod') AS response_code
+   FROM  lakehouse.bronze.weatheronepoint
+  WHERE
+  json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL
+  AND json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL
+
+)
+
+select *
+from bronze_data 
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+[0m15:58:44.906553 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:58:46.423489 [debug] [Thread-1 (]: SQL status: SUCCESS in 2.0 seconds
+[0m15:58:46.431391 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weathersil"
+[0m15:58:46.437180 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: alter table "lakehouse"."silver"."weathersil" rename to lakehouse.silver.weathersil__dbt_backup
+[0m15:58:46.664264 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:46.672370 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weathersil"
+[0m15:58:46.673573 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: alter table lakehouse.silver.weathersil__dbt_tmp rename to lakehouse.silver.weathersil
+[0m15:58:46.868780 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:46.875809 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weathersil"
+[0m15:58:46.876944 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: drop table if exists lakehouse.silver.weathersil__dbt_backup
+[0m15:58:47.184640 [debug] [Thread-1 (]: SQL status: SUCCESS in 0.0 seconds
+[0m15:58:47.193731 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weathersil (execute): 15:58:44.876579 => 15:58:47.192584
+[0m15:58:47.194300 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: ROLLBACK
+[0m15:58:47.194300 [debug] [Thread-1 (]: On model.projet_dbt.weathersil: Close
+[0m15:58:47.196420 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9286b3d7-1baa-4ee7-a88c-ef14f9d3de75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D9462C20>]}
+[0m15:58:47.201430 [info ] [Thread-1 (]: 2 of 2 OK created sql table model silver.weathersil ............................ [[32mSUCCESS[0m in 2.35s]
+[0m15:58:47.206376 [debug] [Thread-1 (]: Finished running node model.projet_dbt.weathersil
+[0m15:58:47.210883 [debug] [MainThread]: On master: COMMIT
+[0m15:58:47.213410 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:58:47.215409 [debug] [MainThread]: Connection 'list_lakehouse' was properly closed.
+[0m15:58:47.217778 [debug] [MainThread]: Connection 'list_lakehouse_silver' was properly closed.
+[0m15:58:47.219298 [debug] [MainThread]: Connection 'model.projet_dbt.weathersil' was properly closed.
+[0m15:58:47.222318 [info ] [MainThread]: 
+[0m15:58:47.228470 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 6.00 seconds (6.00s).
+[0m15:58:47.232995 [debug] [MainThread]: Command end result
+[0m15:58:47.262722 [info ] [MainThread]: 
+[0m15:58:47.264721 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:58:47.268266 [info ] [MainThread]: 
+[0m15:58:47.274318 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m15:58:47.279373 [debug] [MainThread]: Command `dbt run` succeeded at 15:58:47.278379 after 6.37 seconds
+[0m15:58:47.280903 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D662A800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D91334F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9D9489330>]}
+[0m15:58:47.282140 [debug] [MainThread]: Flushing usage events
+[0m16:44:23.803999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162EA2AA860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162E9A1A560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162E9A1A230>]}
+
+
+============================== 16:44:23.810544 | 85cb9312-9d2f-42d6-9533-ca5c4f99741f ==============================
+[0m16:44:23.810544 [info ] [MainThread]: Running with dbt=1.5.1
+[0m16:44:23.811540 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\eho.mbengue\\OneDrive - ONEPOINT\\Documents\\MODERNEDATAPLATFORM\\Modern Data platform dev git\\trino-iceberg-minio', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'C:\\Users\\eho.mbengue\\OneDrive - ONEPOINT\\Documents\\MODERNEDATAPLATFORM\\Modern Data platform dev git\\trino-iceberg-minio\\logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m16:44:24.029846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '85cb9312-9d2f-42d6-9533-ca5c4f99741f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162E9A1A500>]}
+[0m16:44:24.044378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '85cb9312-9d2f-42d6-9533-ca5c4f99741f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162ECDD3490>]}
+[0m16:44:24.074463 [debug] [MainThread]: checksum: 7c72c19e20044af580a3af263f31a79e51001c9cb775ec446193990a9604b428, vars: {}, profile: , target: dev, version: 1.5.1
+[0m16:44:25.249247 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 0 files added, 1 files changed.
+[0m16:44:25.250244 [debug] [MainThread]: Partial parsing: updated file: projet_dbt://models\silver\weathersil.sql
+[0m16:44:25.280337 [debug] [MainThread]: 1699: static parser successfully parsed bronze\weatheronepoint.sql
+[0m16:44:25.300044 [debug] [MainThread]: 1699: static parser successfully parsed silver\weathersil.sql
+[0m16:44:25.316639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '85cb9312-9d2f-42d6-9533-ca5c4f99741f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162ED03C0D0>]}
+[0m16:44:25.329164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '85cb9312-9d2f-42d6-9533-ca5c4f99741f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162ED0080A0>]}
+[0m16:44:25.330175 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 332 macros, 0 operations, 0 seed files, 2 sources, 0 exposures, 0 metrics, 0 groups
+[0m16:44:25.331178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '85cb9312-9d2f-42d6-9533-ca5c4f99741f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162ED00AD70>]}
+[0m16:44:25.335761 [info ] [MainThread]: 
+[0m16:44:25.339713 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m16:44:25.343727 [debug] [ThreadPool]: Acquiring new trino connection 'list_lakehouse'
+[0m16:44:25.371812 [debug] [ThreadPool]: Using trino connection "list_lakehouse"
+[0m16:44:25.373812 [debug] [ThreadPool]: On list_lakehouse: select distinct schema_name
+    from lakehouse.INFORMATION_SCHEMA.schemata
+[0m16:44:25.374814 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:44:27.156753 [debug] [ThreadPool]: SQL status: SUCCESS in 2.0 seconds
+[0m16:44:27.159517 [debug] [ThreadPool]: On list_lakehouse: Close
+[0m16:44:27.167046 [debug] [ThreadPool]: Using trino connection "list_lakehouse"
+[0m16:44:27.167770 [debug] [ThreadPool]: On list_lakehouse: select distinct schema_name
+    from lakehouse.INFORMATION_SCHEMA.schemata
+[0m16:44:27.167770 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:44:27.448962 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m16:44:27.451948 [debug] [ThreadPool]: On list_lakehouse: Close
+[0m16:44:27.455843 [debug] [ThreadPool]: Acquiring new trino connection 'list_lakehouse_gold'
+[0m16:44:27.476212 [debug] [ThreadPool]: Using trino connection "list_lakehouse_gold"
+[0m16:44:27.476212 [debug] [ThreadPool]: On list_lakehouse_gold: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'gold'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'gold')
+[0m16:44:27.480827 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:44:28.664757 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m16:44:28.667551 [debug] [ThreadPool]: On list_lakehouse_gold: ROLLBACK
+[0m16:44:28.668058 [debug] [ThreadPool]: On list_lakehouse_gold: Close
+[0m16:44:28.671248 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lakehouse_gold, now list_lakehouse_silver)
+[0m16:44:28.679863 [debug] [ThreadPool]: Using trino connection "list_lakehouse_silver"
+[0m16:44:28.680867 [debug] [ThreadPool]: On list_lakehouse_silver: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'silver'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'silver')
+[0m16:44:28.680867 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:44:29.277463 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m16:44:29.282076 [debug] [ThreadPool]: On list_lakehouse_silver: ROLLBACK
+[0m16:44:29.284687 [debug] [ThreadPool]: On list_lakehouse_silver: Close
+[0m16:44:29.290922 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lakehouse_silver, now list_lakehouse_bronze)
+[0m16:44:29.306112 [debug] [ThreadPool]: Using trino connection "list_lakehouse_bronze"
+[0m16:44:29.306112 [debug] [ThreadPool]: On list_lakehouse_bronze: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'bronze')
+[0m16:44:29.311818 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:44:29.730356 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m16:44:29.733827 [debug] [ThreadPool]: On list_lakehouse_bronze: ROLLBACK
+[0m16:44:29.735458 [debug] [ThreadPool]: On list_lakehouse_bronze: Close
+[0m16:44:29.737928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '85cb9312-9d2f-42d6-9533-ca5c4f99741f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162ECFEC490>]}
+[0m16:44:29.739608 [debug] [MainThread]: On master: COMMIT
+[0m16:44:29.741675 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:44:29.741675 [info ] [MainThread]: 
+[0m16:44:29.760436 [debug] [Thread-1 (]: Began running node model.projet_dbt.weatheronepoint
+[0m16:44:29.761371 [info ] [Thread-1 (]: 1 of 2 START sql table model bronze.weatheronepoint ............................ [RUN]
+[0m16:44:29.767066 [debug] [Thread-1 (]: Acquiring new trino connection 'model.projet_dbt.weatheronepoint'
+[0m16:44:29.769471 [debug] [Thread-1 (]: Began compiling node model.projet_dbt.weatheronepoint
+[0m16:44:29.777028 [debug] [Thread-1 (]: Writing injected SQL for node "model.projet_dbt.weatheronepoint"
+[0m16:44:29.782124 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weatheronepoint (compile): 16:44:29.770493 => 16:44:29.781224
+[0m16:44:29.785675 [debug] [Thread-1 (]: Began executing node model.projet_dbt.weatheronepoint
+[0m16:44:29.870738 [debug] [Thread-1 (]: Writing runtime sql for node "model.projet_dbt.weatheronepoint"
+[0m16:44:29.876074 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m16:44:29.876074 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: create table lakehouse.bronze.weatheronepoint__dbt_tmp
+      
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below 
+*/
+
+
+
+with source_data as (
+
+    SELECT
+    *
+    FROM  source.weather.weather
+    WHERE
+    json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL
+    AND json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+[0m16:44:29.881204 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m16:44:30.079419 [debug] [Thread-1 (]: Trino adapter: Trino query id: 20230616_144429_00012_ihiga
+[0m16:44:30.080496 [debug] [Thread-1 (]: Trino adapter: Trino error: TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 18:11: Table 'source.weather.weather' does not exist", query_id=20230616_144429_00012_ihiga)
+[0m16:44:30.081948 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weatheronepoint (execute): 16:44:29.788048 => 16:44:30.081185
+[0m16:44:30.082581 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: ROLLBACK
+[0m16:44:30.084493 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: Close
+[0m16:44:30.261173 [debug] [Thread-1 (]: Database Error in model weatheronepoint (models\bronze\weatheronepoint.sql)
+  TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 18:11: Table 'source.weather.weather' does not exist", query_id=20230616_144429_00012_ihiga)
+  compiled Code at target\run\projet_dbt\models\bronze\weatheronepoint.sql
+[0m16:44:30.261173 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '85cb9312-9d2f-42d6-9533-ca5c4f99741f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162ED0A7190>]}
+[0m16:44:30.261173 [error] [Thread-1 (]: 1 of 2 ERROR creating sql table model bronze.weatheronepoint ................... [[31mERROR[0m in 0.50s]
+[0m16:44:30.265884 [debug] [Thread-1 (]: Finished running node model.projet_dbt.weatheronepoint
+[0m16:44:30.265884 [debug] [Thread-1 (]: Began running node model.projet_dbt.weathersil
+[0m16:44:30.265884 [info ] [Thread-1 (]: 2 of 2 SKIP relation silver.weathersil ......................................... [[33mSKIP[0m]
+[0m16:44:30.265884 [debug] [Thread-1 (]: Finished running node model.projet_dbt.weathersil
+[0m16:44:30.273796 [debug] [MainThread]: On master: COMMIT
+[0m16:44:30.275812 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:44:30.275812 [debug] [MainThread]: Connection 'list_lakehouse' was properly closed.
+[0m16:44:30.275812 [debug] [MainThread]: Connection 'list_lakehouse_bronze' was properly closed.
+[0m16:44:30.280904 [debug] [MainThread]: Connection 'model.projet_dbt.weatheronepoint' was properly closed.
+[0m16:44:30.281416 [info ] [MainThread]: 
+[0m16:44:30.283783 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 4.94 seconds (4.94s).
+[0m16:44:30.285873 [debug] [MainThread]: Command end result
+[0m16:44:30.298990 [info ] [MainThread]: 
+[0m16:44:30.301993 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m16:44:30.305087 [info ] [MainThread]: 
+[0m16:44:30.307303 [error] [MainThread]: [33mDatabase Error in model weatheronepoint (models\bronze\weatheronepoint.sql)[0m
+[0m16:44:30.309305 [error] [MainThread]:   TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 18:11: Table 'source.weather.weather' does not exist", query_id=20230616_144429_00012_ihiga)
+[0m16:44:30.311838 [error] [MainThread]:   compiled Code at target\run\projet_dbt\models\bronze\weatheronepoint.sql
+[0m16:44:30.314842 [info ] [MainThread]: 
+[0m16:44:30.320107 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 TOTAL=2
+[0m16:44:30.323604 [debug] [MainThread]: Command `dbt run` failed at 16:44:30.323604 after 6.71 seconds
+[0m16:44:30.325621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162EA2AA860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162ED0D04C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162ED0D3BB0>]}
+[0m16:44:30.327724 [debug] [MainThread]: Flushing usage events
+[0m16:50:35.184448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C68528A860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6849FA530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6849FA200>]}
+
+
+============================== 16:50:35.189557 | 64c1ac89-7f65-437f-84a1-2363a2f522f4 ==============================
+[0m16:50:35.189557 [info ] [MainThread]: Running with dbt=1.5.1
+[0m16:50:35.189557 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\eho.mbengue\\OneDrive - ONEPOINT\\Documents\\MODERNEDATAPLATFORM\\Modern Data platform dev git\\trino-iceberg-minio\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\eho.mbengue\\OneDrive - ONEPOINT\\Documents\\MODERNEDATAPLATFORM\\Modern Data platform dev git\\trino-iceberg-minio', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m16:50:35.354798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '64c1ac89-7f65-437f-84a1-2363a2f522f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6849FA4D0>]}
+[0m16:50:35.367073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '64c1ac89-7f65-437f-84a1-2363a2f522f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C687E67490>]}
+[0m16:50:35.383632 [debug] [MainThread]: checksum: 7c72c19e20044af580a3af263f31a79e51001c9cb775ec446193990a9604b428, vars: {}, profile: , target: dev, version: 1.5.1
+[0m16:50:35.454663 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:50:35.454663 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:50:35.454663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '64c1ac89-7f65-437f-84a1-2363a2f522f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C68807FF10>]}
+[0m16:50:35.467060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '64c1ac89-7f65-437f-84a1-2363a2f522f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C68803CE80>]}
+[0m16:50:35.467060 [info ] [MainThread]: Found 3 models, 0 tests, 0 snapshots, 0 analyses, 332 macros, 0 operations, 0 seed files, 2 sources, 0 exposures, 0 metrics, 0 groups
+[0m16:50:35.467060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '64c1ac89-7f65-437f-84a1-2363a2f522f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C68803D0C0>]}
+[0m16:50:35.467060 [info ] [MainThread]: 
+[0m16:50:35.474574 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m16:50:35.477883 [debug] [ThreadPool]: Acquiring new trino connection 'list_lakehouse'
+[0m16:50:35.499509 [debug] [ThreadPool]: Using trino connection "list_lakehouse"
+[0m16:50:35.500509 [debug] [ThreadPool]: On list_lakehouse: select distinct schema_name
+    from lakehouse.INFORMATION_SCHEMA.schemata
+[0m16:50:35.501510 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:50:35.638205 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m16:50:35.639969 [debug] [ThreadPool]: On list_lakehouse: Close
+[0m16:50:35.644314 [debug] [ThreadPool]: Using trino connection "list_lakehouse"
+[0m16:50:35.644314 [debug] [ThreadPool]: On list_lakehouse: select distinct schema_name
+    from lakehouse.INFORMATION_SCHEMA.schemata
+[0m16:50:35.644314 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:50:35.766710 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m16:50:35.767351 [debug] [ThreadPool]: On list_lakehouse: Close
+[0m16:50:35.767351 [debug] [ThreadPool]: Acquiring new trino connection 'list_lakehouse_silver'
+[0m16:50:35.786470 [debug] [ThreadPool]: Using trino connection "list_lakehouse_silver"
+[0m16:50:35.786470 [debug] [ThreadPool]: On list_lakehouse_silver: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'silver'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'silver')
+[0m16:50:35.786470 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:50:36.068122 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m16:50:36.070358 [debug] [ThreadPool]: On list_lakehouse_silver: ROLLBACK
+[0m16:50:36.071494 [debug] [ThreadPool]: On list_lakehouse_silver: Close
+[0m16:50:36.074662 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lakehouse_silver, now list_lakehouse_gold)
+[0m16:50:36.083331 [debug] [ThreadPool]: Using trino connection "list_lakehouse_gold"
+[0m16:50:36.084359 [debug] [ThreadPool]: On list_lakehouse_gold: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'gold'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'gold')
+[0m16:50:36.084359 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:50:36.363985 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m16:50:36.366303 [debug] [ThreadPool]: On list_lakehouse_gold: ROLLBACK
+[0m16:50:36.367432 [debug] [ThreadPool]: On list_lakehouse_gold: Close
+[0m16:50:36.369495 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lakehouse_gold, now list_lakehouse_bronze)
+[0m16:50:36.379377 [debug] [ThreadPool]: Using trino connection "list_lakehouse_bronze"
+[0m16:50:36.379377 [debug] [ThreadPool]: On list_lakehouse_bronze: select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materializedview'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from lakehouse.INFORMATION_SCHEMA.tables t
+    left join system.metadata.materialized_views mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'bronze'
+          and (mv.catalog_name is null or mv.catalog_name =  'lakehouse')
+          and (mv.schema_name is null or mv.schema_name =  'bronze')
+[0m16:50:36.379377 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:50:36.723632 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m16:50:36.726065 [debug] [ThreadPool]: On list_lakehouse_bronze: ROLLBACK
+[0m16:50:36.727265 [debug] [ThreadPool]: On list_lakehouse_bronze: Close
+[0m16:50:36.729715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '64c1ac89-7f65-437f-84a1-2363a2f522f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6880E44F0>]}
+[0m16:50:36.730228 [debug] [MainThread]: On master: COMMIT
+[0m16:50:36.732771 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:50:36.735590 [info ] [MainThread]: 
+[0m16:50:36.751960 [debug] [Thread-1 (]: Began running node model.projet_dbt.weatheronepoint
+[0m16:50:36.752947 [info ] [Thread-1 (]: 1 of 2 START sql table model bronze.weatheronepoint ............................ [RUN]
+[0m16:50:36.757480 [debug] [Thread-1 (]: Acquiring new trino connection 'model.projet_dbt.weatheronepoint'
+[0m16:50:36.759484 [debug] [Thread-1 (]: Began compiling node model.projet_dbt.weatheronepoint
+[0m16:50:36.769571 [debug] [Thread-1 (]: Writing injected SQL for node "model.projet_dbt.weatheronepoint"
+[0m16:50:36.772126 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weatheronepoint (compile): 16:50:36.761030 => 16:50:36.771126
+[0m16:50:36.773124 [debug] [Thread-1 (]: Began executing node model.projet_dbt.weatheronepoint
+[0m16:50:36.854782 [debug] [Thread-1 (]: Writing runtime sql for node "model.projet_dbt.weatheronepoint"
+[0m16:50:36.867490 [debug] [Thread-1 (]: Using trino connection "model.projet_dbt.weatheronepoint"
+[0m16:50:36.868522 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: create table lakehouse.bronze.weatheronepoint__dbt_tmp
+      
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below 
+*/
+
+
+
+with source_data as (
+
+    SELECT
+    *
+    FROM  source.weather.weather
+    WHERE
+    json_extract_scalar(_airbyte_data, '$.coord.lon') IS NOT NULL
+    AND json_extract_scalar(_airbyte_data, '$.coord.lat') IS NOT NULL
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+[0m16:50:36.869847 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m16:50:38.070580 [debug] [Thread-1 (]: Trino adapter: Trino query id: 20230616_145036_00020_ihiga
+[0m16:50:38.075248 [debug] [Thread-1 (]: Trino adapter: Trino error: TrinoExternalError(type=EXTERNAL, name=HIVE_BAD_DATA, message="Malformed ORC file. File has no columns [s3a://source/weather/weather/2023_06_16_1686927002629_0.csv]", query_id=20230616_145036_00020_ihiga)
+[0m16:50:38.079009 [debug] [Thread-1 (]: Timing info for model.projet_dbt.weatheronepoint (execute): 16:50:36.774645 => 16:50:38.077480
+[0m16:50:38.081124 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: ROLLBACK
+[0m16:50:38.083427 [debug] [Thread-1 (]: On model.projet_dbt.weatheronepoint: Close
+[0m16:50:38.101294 [debug] [Thread-1 (]: Database Error in model weatheronepoint (models\bronze\weatheronepoint.sql)
+  TrinoExternalError(type=EXTERNAL, name=HIVE_BAD_DATA, message="Malformed ORC file. File has no columns [s3a://source/weather/weather/2023_06_16_1686927002629_0.csv]", query_id=20230616_145036_00020_ihiga)
+  compiled Code at target\run\projet_dbt\models\bronze\weatheronepoint.sql
+[0m16:50:38.101294 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '64c1ac89-7f65-437f-84a1-2363a2f522f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6880EAE90>]}
+[0m16:50:38.105932 [error] [Thread-1 (]: 1 of 2 ERROR creating sql table model bronze.weatheronepoint ................... [[31mERROR[0m in 1.34s]
+[0m16:50:38.110309 [debug] [Thread-1 (]: Finished running node model.projet_dbt.weatheronepoint
+[0m16:50:38.115431 [debug] [Thread-1 (]: Began running node model.projet_dbt.weathersil
+[0m16:50:38.119669 [info ] [Thread-1 (]: 2 of 2 SKIP relation silver.weathersil ......................................... [[33mSKIP[0m]
+[0m16:50:38.123701 [debug] [Thread-1 (]: Finished running node model.projet_dbt.weathersil
+[0m16:50:38.129361 [debug] [MainThread]: On master: COMMIT
+[0m16:50:38.132958 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:50:38.135533 [debug] [MainThread]: Connection 'list_lakehouse' was properly closed.
+[0m16:50:38.139057 [debug] [MainThread]: Connection 'list_lakehouse_bronze' was properly closed.
+[0m16:50:38.140876 [debug] [MainThread]: Connection 'model.projet_dbt.weatheronepoint' was properly closed.
+[0m16:50:38.142358 [info ] [MainThread]: 
+[0m16:50:38.146592 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 2.67 seconds (2.67s).
+[0m16:50:38.154276 [debug] [MainThread]: Command end result
+[0m16:50:38.190594 [info ] [MainThread]: 
+[0m16:50:38.193621 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m16:50:38.197752 [info ] [MainThread]: 
+[0m16:50:38.201687 [error] [MainThread]: [33mDatabase Error in model weatheronepoint (models\bronze\weatheronepoint.sql)[0m
+[0m16:50:38.207234 [error] [MainThread]:   TrinoExternalError(type=EXTERNAL, name=HIVE_BAD_DATA, message="Malformed ORC file. File has no columns [s3a://source/weather/weather/2023_06_16_1686927002629_0.csv]", query_id=20230616_145036_00020_ihiga)
+[0m16:50:38.213166 [error] [MainThread]:   compiled Code at target\run\projet_dbt\models\bronze\weatheronepoint.sql
+[0m16:50:38.219904 [info ] [MainThread]: 
+[0m16:50:38.224596 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 TOTAL=2
+[0m16:50:38.233582 [debug] [MainThread]: Command `dbt run` failed at 16:50:38.232330 after 3.07 seconds
+[0m16:50:38.236725 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C68528A860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C6880E91E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C68803D030>]}
+[0m16:50:38.239085 [debug] [MainThread]: Flushing usage events
