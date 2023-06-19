@@ -1,15 +1,18 @@
+# Importation de flow
 from prefect import flow
 
+# Importation des dependances de airbyte 
 from prefect_airbyte.server import AirbyteServer
 from prefect_airbyte.connections import AirbyteConnection
 from prefect_airbyte.flows import run_connection_sync
 
+# Importation des dependances de DBT 
+from prefect_dbt.cli.commands import DbtCoreOperation
+
+# Import les dependances pour deployer et schedules notre code
 from prefect.deployments import run_deployment
 from prefect.deployments import Deployment
 from prefect.server.schemas.schedules import CronSchedule
-
-from prefect_dbt.cli.commands import DbtCoreOperation
-from prefect.task_runners import SequentialTaskRunner
 
 
 server = AirbyteServer(server_host="airbyte-proxy", server_port=8000)
@@ -27,7 +30,7 @@ def airbyte_syncs():
     print(f'UNE ACTUALISATION AIRBYTE : {sync_result.records_synced}')
 
 
-@flow(name="flow_dbt",task_runner=SequentialTaskRunner(),retry_delay_seconds=5,retries=3)
+@flow(name="flow_dbt",retry_delay_seconds=5,retries=3)
 def dbt_flow() -> str:
     result = DbtCoreOperation(
         commands=["dbt run --models weatheronepoint weathersil --target dev","dbt run --models weathergold --target gold"],
@@ -51,11 +54,9 @@ deploiement_dbt = Deployment.build_from_flow(
 
 def main_airflow():
     run_deployment(name="flow_airbyte/cron_airflow")
-    # print(response)
 
 def main_dbt():
     run_deployment(name="flow_dbt/cron_dbt")
-    # print(response)
 
 deploiement_airbyte.apply()
 deploiement_dbt.apply()

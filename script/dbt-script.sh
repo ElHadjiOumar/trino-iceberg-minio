@@ -1,10 +1,10 @@
-#!/bin/bash
+# #!/bin/bash
 
-# Set up environment here, if necessary...
+# # Set up environment here, if necessary...
 
+sleep 40
 
-
-# Then either run a dbt command:
+# # Then either run a dbt command:
 # dbt run --models weatheronepoint weathersil --target dev
 
 # dbt run --models weathergold --target gold
@@ -14,7 +14,6 @@ pip install -U prefect
 pip install prefect-dbt
 
 pip install prefect-airbyte
-
 
 sleep 30
 
@@ -44,5 +43,5 @@ while true; do
   fi
 done
 
-# Or keep the container alive:
+Or keep the container alive:
 tail -f /dev/null
