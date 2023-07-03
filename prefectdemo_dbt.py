@@ -63,5 +63,5 @@ deploiement_dbt.apply()
 
 if __name__ == "__main__":
     main_airflow()
-    main_dbt
+    main_dbt()
 

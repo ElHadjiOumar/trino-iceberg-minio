@@ -1,10 +1,8 @@
 # #!/bin/bash
 
-# # Set up environment here, if necessary...
+# Set up environment here, if necessary...
 
-sleep 40
-
-# # Then either run a dbt command:
+# Then either run a dbt command:
 # dbt run --models weatheronepoint weathersil --target dev
 
 # dbt run --models weathergold --target gold
@@ -15,16 +13,16 @@ pip install prefect-dbt
 
 pip install prefect-airbyte
 
-sleep 30
+# sleep 30
 
 while true; do
-  # Lancement du serveur Prefect en arrière-plan
+  # # Lancement du serveur Prefect en arrière-plan
   prefect server start & PID_SERVER=$!
-  sleep 20  # Donnez un peu de temps au serveur pour démarrer
+  sleep 10  # Donnez un peu de temps au serveur pour démarrer
 
   # Lancement de l'agent Prefect en arrière-plan
   prefect agent start -q 'default' & PID_AGENT=$!
-  sleep 20  # Donnez un peu de temps à l'agent pour démarrer
+  sleep 10  # Donnez un peu de temps à l'agent pour démarrer
 
   # Lancement du script Python en arrière-plan
   python prefectdemo_dbt.py & PID_PYTHON=$!
@@ -43,5 +41,5 @@ while true; do
   fi
 done
 
-Or keep the container alive:
+# Or keep the container alive:
 tail -f /dev/null

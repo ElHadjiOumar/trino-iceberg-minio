@@ -17,7 +17,7 @@ with silver_data as (
 )
 
 select 
-    dt,
+    from_unixtime(CAST(json_extract_scalar(_airbyte_data, '$.dt') AS DOUBLE)),
     main_temp,
     main_humidity,
     wind_speed
