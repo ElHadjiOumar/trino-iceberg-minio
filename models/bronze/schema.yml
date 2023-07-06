@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: weatheronepoint
+  - name: onepointparis
     description: "A dbt model using data from lakehouse.bronze.weatheronepoint"
     columns:
       - name: _airbyte_ab_id

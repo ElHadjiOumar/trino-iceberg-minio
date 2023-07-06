@@ -7,10 +7,9 @@ projet_dbt:
       user: Trino
       password:  # required if method is ldap or kerberos
       catalog: lakehouse
-      host: trino
+      host: localhost
       port: 8080
       schema: bronze  # a faire essayer d'envoyer vers silver
-      # table : weatheronepoint 
       threads: 1
     gold:
       type: trino
@@ -18,7 +17,7 @@ projet_dbt:
       user: Trino
       password:  # required if method is ldap or kerberos
       catalog: clickhouse
-      host: trino
+      host: localhost
       port: 8080
       schema: gold  # a faire essayer d'envoyer vers silver
 

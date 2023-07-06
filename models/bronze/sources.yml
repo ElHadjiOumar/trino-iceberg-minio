@@ -6,6 +6,25 @@ sources:
     schema: weather
     tables:
       - name: weather
+  
+  - name: source
+    database: source
+    schema: weather
+    tables:
+      - name: weathermontreal
+
+
+  - name: source
+    database: source
+    schema: weather
+    tables:
+      - name: weatherbordeaux
+
+  - name: source
+    database: source
+    schema: weather
+    tables:
+      - name: weatherrennes
 
   - name: sourcesilver
     database: lakehouse

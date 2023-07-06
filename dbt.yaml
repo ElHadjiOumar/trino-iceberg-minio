@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dbt
+spec:
+  containers:
+    - image: ghcr.io/dbt-labs/dbt-core
+      name: dbt
